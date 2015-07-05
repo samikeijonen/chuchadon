@@ -1324,7 +1324,7 @@ a.chuchadon-button {
 }
 
 .js .top-search-form,
-.js .social-navigation-wrapper,
+.js .social-navigation,
 .sidebar-header-wrapper {
 	clip: rect(0 0 0 0);
 	max-height: 0;
@@ -1336,13 +1336,13 @@ a.chuchadon-button {
 
 	
 .top-search-form.opened,
-.js .social-navigation-wrapper.opened,
+.js .social-navigation.opened,
 .sidebar-header-wrapper.opened {
 	clear: both;
 	max-height: 9999px;
 }
 
-.social-navigation-wrapper {
+.social-navigation {
 	text-align: center;
 }
 
@@ -3567,7 +3567,7 @@ body .search-submit {
 .comments-title,
 .comment-navigation-top,
 .pagination,
-.social-navigation-wrapper.opened,
+.social-navigation.opened,
 .sidebar-header-wrapper.opened
 
  {
