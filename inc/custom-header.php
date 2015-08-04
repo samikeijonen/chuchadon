@@ -14,8 +14,8 @@ function chuchadon_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'chuchadon_custom_header_args', array(
 		'default-image'          => '%s/images/header-image.jpg',
 		'default-text-color'     => 'fff',
-		'width'                  => 1920,
-		'height'                 => 500,
+		'width'                  => 1520,
+		'height'                 => 1520,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'chuchadon_header_style'
 	) ) );
@@ -59,19 +59,19 @@ function chuchadon_header_style() {
 	$header_width = get_custom_header()->width;
 	
 	/* When to show header image. */
-	$min_width = absint( apply_filters( 'chuchadon_header_bg_show', 1 ) );
+	$min_width = absint( apply_filters( 'chuchadon_header_bg_show', 800 ) );
 	
 	/* Background arguments. */
-	$background_arguments = esc_attr( apply_filters( 'chuchadon_header_bg_arguments', 'no-repeat 50% 50%' ) );
+	$background_arguments = esc_attr( apply_filters( 'chuchadon_header_bg_arguments', 'no-repeat' ) );
 	
 	if ( ! empty( $header_image ) ) {
-		$style .= "@media screen and (min-width: {$min_width}px) { body.custom-header-image .site-header { background: url({$header_image}) {$background_arguments}; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment: fixed; } }";
+		$style .= "@media screen and (min-width: {$min_width}px) { body.custom-header-image .site-header { background: url({$header_image}) {$background_arguments}; -webkit-background-size: 50%; -moz-background-size: 50%; -o-background-size: 50%; background-size: 50%; } }";
 	}
 	
 	/* Site title styles. */
 	if ( display_header_text() ) {
-		$style .= ".site-title, .site-title a, .site-description, .site-description a { color: #{$header_color} }";
-		$style .= ".site-title a { border-color: #{$header_color} }";
+		$style .= ".site-title, .site-title a, .site-description, .site-description a, .top-callout-content, .top-callout-content a { color: #{$header_color} }";
+		$style .= ".site-title a, .top-callout-content a { border-color: #{$header_color} }";
 	}
 	
 	if ( ! display_header_text() ) {

@@ -34,7 +34,7 @@ get_header(); ?>
 
 					<?php
 						/* Load content-jetpack-testimonial template. */
-						get_template_part( 'content', 'jetpack-testimonial' );
+						get_template_part( 'template-parts/content', 'jetpack-testimonial' );
 					?>
 
 				<?php endwhile; ?>
@@ -53,7 +53,7 @@ get_header(); ?>
 
 	<?php else : ?>
 
-		<?php get_template_part( 'content', 'none' ); ?>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 	<?php endif; ?>
 		

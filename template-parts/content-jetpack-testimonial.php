@@ -8,7 +8,7 @@
 
 <?php if( is_page_template( 'pages/front-page.php' ) || is_archive() ) : ?>
 
-	<div class="entry-testimonial" <?php hybrid_attr( 'post' ); ?>>
+	<div class="entry-testimonial entry-grid" <?php hybrid_attr( 'post' ); ?>>
 	
 		<div class="entry-content" <?php hybrid_attr( 'entry-content' ); ?>>
 			

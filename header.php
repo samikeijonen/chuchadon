@@ -27,19 +27,27 @@
 	
 	<?php get_sidebar( 'header' ); // Loads the sidebar-header.php template. ?>
 	
-	<?php get_template_part( 'menu', 'social' ); // Loads the menu-social.php template. ?>
+	<?php get_template_part( 'menus/menu', 'social' );  // Loads the menus/menu-social.php template. ?>
+	
+	<?php get_template_part( 'menus/menu', 'buttons' ); // Loads the menus/menu-buttoms.php template. ?>
 
-	<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
+	<?php get_template_part( 'menus/menu', 'primary' ); // Loads the menus/menu-primary.php template. ?>
 	
 	<?php do_action( 'chuchadon_before_header' ); // Hook before header. ?>
 	
 	<div class="site-title-desc clear">
 		
-		<div id="home-title" class="home-title" <?php hybrid_attr( 'site-title' ); ?>>
+		<p id="home-title" class="home-title" <?php hybrid_attr( 'site-title' ); ?>>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-		</div>
+		</p>
 				
-		<div id="home-description" class="home-description" <?php hybrid_attr( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></div>	
+		<p id="home-description" class="home-description" <?php hybrid_attr( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></p>	
+	
+		<?php
+			if ( function_exists( 'breadcrumb_trail' ) && current_theme_supports( 'breadcrumb-trail' ) ) :
+				breadcrumb_trail( array( 'container' => 'nav', 'show_on_front' => false, 'show_browse' => false, 'before' => '<h2 class="screen-reader-text">' . esc_attr__( 'Breadcrumbs', 'chuchadon' ) . '</h2>' ) );
+			endif;
+		?>
 	
 	</div><!-- .site-title-desc -->
 	
@@ -52,7 +60,7 @@
 			<div class="site-branding">
 			
 				<?php
-					if ( !is_front_page() && !is_singular() && !is_404() ) : // If viewing a multi-post page.
+					if ( !is_singular() ) : // If viewing a multi-post page.
 
 						get_template_part( 'loop', 'meta' ); // Loads the loop-meta.php template.
 						
@@ -62,6 +70,12 @@
 						
 					endif; // End check for multi-post page.
 				?>
+				
+				<?php if( is_page_template( 'pages/front-page.php' ) && '' != trim( get_post_field( 'post_content', get_the_ID() ) ) ) : // Content for front page template in the header. ?>
+					<div id="top-callout-content" class="top-callout-content clear">
+						<?php echo apply_filters( 'the_content', ( get_post_field( 'post_content', get_the_ID() ) ) ); ?>
+					</div>
+				<?php endif; ?>
 					
 			</div><!-- .site-branding -->
 			
@@ -74,12 +88,6 @@
 	<div id="content" class="site-content">
 		<div class="wrap">
 			<div class="wrap-inside">
-				
-				<?php
-					if ( function_exists( 'breadcrumb_trail' ) && current_theme_supports( 'breadcrumb-trail' ) ) :
-						breadcrumb_trail( array( 'container' => 'nav', 'show_on_front' => false, 'show_browse' => false, 'before' => '<h2 class="screen-reader-text">' . esc_attr__( 'Breadcrumbs', 'chuchadon' ) . '</h2><div class="wrap">', 'after' => '</div>' ) );
-					endif;
-				?>
 				
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main" role="main" <?php hybrid_attr( 'content' ); ?>>

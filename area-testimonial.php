@@ -30,7 +30,7 @@
 
 							<?php while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
 
-								<?php get_template_part( 'content', 'jetpack-testimonial' ); ?>
+								<?php get_template_part( 'template-parts/content', 'jetpack-testimonial' ); ?>
 
 							<?php endwhile; ?>
 

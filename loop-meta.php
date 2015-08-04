@@ -12,6 +12,9 @@
 		if ( is_home() && !is_front_page() ) :
 			$chuchadon_archive_title = get_post_field( 'post_title', get_queried_object_id() );
 			$chuchadon_loop_desc     = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
+		elseif( is_404() ) :
+			$chuchadon_archive_title = __( 'Oops! That page can&rsquo;t be found.', 'chuchadon' );
+			$chuchadon_loop_desc     = __( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'chuchadon' );
 		elseif( is_search() ) :
 			/* Translators: %s is the search query. The HTML entities are opening and closing curly quotes. */
 			$chuchadon_archive_title = sprintf( __( 'Search results for &#8220;%s&#8221;', 'chuchadon' ), get_search_query() );

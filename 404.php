@@ -10,13 +10,8 @@ get_header(); ?>
 	<section class="entry error-404 not-found">
 			
 		<div class="entry-inner">
-				
-			<header class="page-header entry-header">
-				<h1 class="page-title entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'chuchadon' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<div class="page-content entry-content">
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'chuchadon' ); ?></p>
 
 				<?php get_search_form(); ?>
 

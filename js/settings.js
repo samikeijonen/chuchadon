@@ -29,10 +29,10 @@
 	
 	// Top search form
 	if ( document.getElementById( 'top-search-form' ) ) {
-		var buttonSearch = document.getElementById( 'top-search-form-toggle' );
+		var buttonSearch     = document.getElementById( 'top-search-form-toggle' );
 		var buttonSearchSpan = document.getElementById( 'top-search-form-toggle-span' );
 		var buttonSearchMenu = document.getElementById( 'top-search-form-toggle-menu' );
-		var navSearch = responsiveNav( ".top-search-form", { // Selector
+		var navSearch        = responsiveNav( ".top-search-form", { // Selector
 			transition: 350,                         // Integer: Speed of the transition, in milliseconds
 			customToggle: "#top-search-form-toggle", // Selector: Specify the ID of a custom toggle
 			init: function () {                      // Set ARIA for menu toggle button
@@ -44,6 +44,8 @@
 				buttonSearch.setAttribute( 'aria-pressed', 'true' );
 				buttonSearchSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonSearchMenu.innerHTML = screenReaderTexts.collapseSearch;
+				navSocial.close();
+				navHeader.close();
 			},
 			close: function () {
 				buttonSearch.setAttribute( 'aria-expanded', 'false' );
@@ -55,11 +57,11 @@
 	}
 	
 	// Social menu
-	if ( document.getElementById( 'social-navigation-wrapper' ) ) {
-		var buttonSocial = document.getElementById( 'social-nav-toggle' );
+	if ( document.getElementById( 'menu-social' ) ) {
+		var buttonSocial     = document.getElementById( 'social-nav-toggle' );
 		var buttonSocialSpan = document.getElementById( 'social-nav-toggle-span' );
 		var buttonSocialMenu = document.getElementById( 'social-nav-toggle-menu' );
-		var navSocial = responsiveNav( ".social-navigation-wrapper", { // Selector
+		var navSocial        = responsiveNav( ".social-navigation", { // Selector
 			transition: 350,                    // Integer: Speed of the transition, in milliseconds
 			customToggle: "#social-nav-toggle", // Selector: Specify the ID of a custom toggle
 			init: function () {                 // Set ARIA for menu toggle button
@@ -71,6 +73,8 @@
 				buttonSocial.setAttribute( 'aria-pressed', 'true' );
 				buttonSocialSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonSocialMenu.innerHTML = screenReaderTexts.collapseSocialMenu;
+				navSearch.close();
+				navHeader.close();
 			},
 			close: function () {
 				buttonSocial.setAttribute( 'aria-expanded', 'false' );
@@ -83,10 +87,10 @@
 	
 	// Header sidebar
 	if ( document.getElementById( 'sidebar-header-wrapper' ) ) {
-		var buttonHeader = document.getElementById( 'header-sidebar-toggle' );
+		var buttonHeader     = document.getElementById( 'header-sidebar-toggle' );
 		var buttonHeaderSpan = document.getElementById( 'header-sidebar-toggle-span' );
 		var buttonHeaderMenu = document.getElementById( 'header-sidebar-toggle-menu' );
-		var navSocial = responsiveNav( ".sidebar-header-wrapper", { // Selector
+		var navHeader        = responsiveNav( ".sidebar-header-wrapper", { // Selector
 			transition: 350,                        // Integer: Speed of the transition, in milliseconds
 			customToggle: "#header-sidebar-toggle", // Selector: Specify the ID of a custom toggle
 			init: function () {                     // Set ARIA for menu toggle button
@@ -98,12 +102,15 @@
 				buttonHeader.setAttribute( 'aria-pressed', 'true' );
 				buttonHeaderSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonHeaderMenu.innerHTML = screenReaderTexts.collapseHeaderSidebar;
+				navSearch.close();
+				navSocial.close();
 			},
 			close: function () {
 				buttonHeader.setAttribute( 'aria-expanded', 'false' );
 				buttonHeader.setAttribute( 'aria-pressed', 'false' );
 				buttonHeaderSpan.setAttribute( 'class', 'genericon genericon-ellipsis' );
 				buttonHeaderMenu.innerHTML = screenReaderTexts.expandHeaderSidebar;
+				window.scrollTo( 0, 0 );
 			},
 		});
 	}

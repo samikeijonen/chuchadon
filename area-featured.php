@@ -5,25 +5,20 @@
 			 * @package Chuchadon
 			 */
 
-				$chuchadon_featured_area = esc_attr( get_theme_mod( 'front_page_featured', 'child-pages' ) );
+				$chuchadon_featured_area = get_theme_mod( 'front_page_featured', 'blog-posts' );
 				
-				if( 'blog-posts' == $chuchadon_featured_area ) :
+				/* Bail if do not want to show anything. */
+				if( 'nothing' == esc_attr( $chuchadon_featured_area ) ) :
+					return;
+				endif;
+				
+				if( 'blog-posts' == esc_attr( $chuchadon_featured_area ) ) :
 					
 					/* Blog Posts Query. */
 					$featured_content = new WP_Query( apply_filters( 'chuchadon_blog_posts_arguments', array(
-					'post_type'      => 'post',
-					'posts_per_page' => 4,
-					'no_found_rows'  => true,
-					) ) );
-					
-				elseif( 'portfolios' == $chuchadon_featured_area ) :
-					
-					/* Portfolios Query. */
-					$featured_content = new WP_Query( apply_filters( 'chuchadon_portfolio_arguments', array(
-					'post_type'      => 'jetpack-portfolio',
-					'orderby'        => 'rand',
-					'posts_per_page' => 4,
-					'no_found_rows'  => true,
+					'post_type'       => 'post',
+					'posts_per_page'  => 4,
+					'no_found_rows'   => true,
 					) ) );
 					
 				else :
@@ -43,22 +38,20 @@
 
 			<?php if ( $featured_content->have_posts() ) : ?>
 
-				<div id="featured-area" class="featured-area <?php echo $chuchadon_featured_area; ?>-area">			
-					<div class="featured-wrapper <?php echo $chuchadon_featured_area; ?>-wrapper">
+				<div id="featured-area" class="featured-area grid-area <?php echo esc_attr( $chuchadon_featured_area ); ?>-area">			
+					<div class="featured-wrapper grid-area-wrapper <?php echo esc_attr( $chuchadon_featured_area ); ?>-wrapper">
 
 						<?php while ( $featured_content->have_posts() ) : $featured_content->the_post(); ?>
 
-							<div class="featured-area-grid <?php echo $chuchadon_featured_area; ?>-grid">
-								<?php
-									if( 'blog-posts' == $chuchadon_featured_area ) :
-										get_template_part( 'content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) );
-									elseif( 'portfolios' == $chuchadon_featured_area ) :
-										get_template_part( 'content', 'jetpack-portfolio' );
-									else :
-										get_template_part( 'content', 'child-pages' );
-									endif;
-								?>
-							</div><!-- .featured-area-grid -->
+							<?php
+								if( 'blog-posts' == esc_attr( $chuchadon_featured_area ) ) :
+									get_template_part( 'template-parts/content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) );
+								elseif( 'portfolios' == esc_attr( $chuchadon_featured_area ) ) :
+									get_template_part( 'template-parts/content', 'jetpack-portfolio' );
+								else :
+									get_template_part( 'template-parts/content', 'child-pages' );
+								endif;
+							?>						
 
 						<?php endwhile; ?>
 

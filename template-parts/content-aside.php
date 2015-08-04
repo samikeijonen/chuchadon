@@ -8,6 +8,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php hybrid_attr( 'post' ); ?>>
 
+	<?php chuchadon_post_thumbnail(); ?>
+
 	<div class="entry-inner">
 
 		<?php if ( is_single() ) : ?>

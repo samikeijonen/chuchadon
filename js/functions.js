@@ -3,7 +3,14 @@
  * Enable tab support for dropdown menus.
  */
 ( function() {
-	var container, menu, menuRight, menuTop, links, linksTop, dropdownButton;
+	var container,
+	menu,
+	menuRight,
+	menuTop,
+	links,
+	linksTop,
+	dropdownButton,
+	styleElement = document.createElement( 'style' );
 
 	container = document.getElementById( 'menu-primary' );
 
@@ -25,6 +32,7 @@
 		
 		// Get all the link elements within the right menu.
 		linksRight = menuRight.getElementsByTagName( 'a' );
+		subMenusRight = menuRight.getElementsByTagName( 'ul' );
 
 		// Each time a menu link is focused or blurred call the function toggleFocus.
 		for ( var i = 0, len = links.length; i < len; i++ ) {
@@ -43,11 +51,49 @@
 			subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
 		}
 		
+		// Set menu items with submenus to aria-haspopup="true" for right menu.
+		for ( var i = 0, len = subMenusRight.length; i < len; i++ ) {
+			subMenusRight[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
+		}
+		
 		// Add button after link when there is submenu around.
 		var parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 		
 		for ( var i = 0; i < parentLink.length; ++i ) {
 			parentLink[i].insertAdjacentHTML( 'afterend', '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+		}
+		
+		// Add 'sub-menu-*' class to sub menus and height styles for them
+		var submenuContainer = container.querySelectorAll( '.sub-menu' );
+		var styleForSubmenus = [];
+		var head = document.head || document.getElementsByTagName( 'head' )[0];
+		for ( var i = 0, len = submenuContainer.length; i < len; i++ ) {
+			
+			// Add 'sub-menu-*' class
+			submenuContainer[i].classList.add( 'sub-menu-' + [i] );
+			
+			// Calculate height of sub menu
+			var submenuHeights = submenuContainer[i].offsetHeight;
+			
+			// Add inline styles for max-height speed
+			submenuContainer[i].style.transition = "max-height " + 350 + "ms";
+			
+			// Add height styles in array
+			styleForSubmenus.push( ".js .sub-menu-" + [i] + ".toggled { max-height: " + submenuHeights + "px !important; } " );	
+		
+		}
+		
+		// Loop trough height styles and add them to head element
+		for ( var i = 0, len = styleForSubmenus.length; i < len; i++ ) {
+			
+			if ( styleElement.styleSheet ) {
+				styleElement.styleSheet.cssText += styleForSubmenus[i];
+			} else {
+				styleElement.innerHTML += styleForSubmenus[i];
+			}
+			
+			head.appendChild( styleElement );
+			
 		}
 		
 		// Select all dropdown buttons
@@ -75,10 +121,17 @@
 					// Set aria-expanded to true
 					this.setAttribute( 'aria-expanded', 'true' );
 					
-					// Get next element meaning UL with .sub-menu and add .toggled class
+					// Get next element meaning UL with .sub-menu class
 					var nextElement = this.nextElementSibling;
+					
+					// Add 'toggled' class to sub-menu element
 					addClass( nextElement, 'toggled' );
 					
+					// Add 'dropdown-active' class to nav when dropdown is toggled
+					if( !hasClass( container, 'dropdown-active' ) ) {
+						addClass( container, 'dropdown-active' );
+					}
+						
 				} else {
 					
 					// Remove .toggled class
@@ -87,9 +140,16 @@
 					// Set aria-expanded to false
 					this.setAttribute( 'aria-expanded', 'false' );
 					
-					// Get next element meaning UL with .sub-menu and add .toggled class
+					// Get next element meaning UL with .sub-menu
 					var nextElement = this.nextElementSibling;
+					
+					// Remove 'toggled' class from sub-menu element
 					removeClass( nextElement, 'toggled' );
+					
+					// Add 'dropdown-active' class to nav when dropdown is toggled
+					if( hasClass( container, 'dropdown-active' ) ) {
+						removeClass( container, 'dropdown-active' );
+					}
 					
 				}
 			}, false );
@@ -193,6 +253,52 @@
 			callback.call(scope, i, array[i]);
 		}
 	};
+	
+	/**
+	 * Get the children of any element
+	 *
+	 * @param  {element}
+	 * @return {array} Returns matching elements in an array
+	 */
+	getChildren = function ( e ) {
+		if ( e.children.length < 1 ) {
+			throw new Error( "The Nav container has no containing elements" );
+		}
+		// Store all children in array
+		var children = [];
+		// Loop through children and store in array if child != TextNode
+		for ( var i = 0; i < e.children.length; i++ ) {
+			if ( e.children[i].nodeType === 1 ) {
+				children.push( e.children[i] );
+			}
+		}
+		return children;
+	}
+	
+	/**
+	 * Calculates the height of the navigation and then creates
+	 * styles which are later added to the page <head>
+	 */
+	calcSubmenuHeight = function ( elem ) {
+		var submenuHeight = 0;
+		for ( var i = 0; i < elem.inner.length; i++ ) {
+			submenuHeight += elem.inner[i].offsetHeight;
+		}
+		return submenuHeight;
+	}
+	
+	/**
+	 * Adds the needed CSS transitions if animations are enabled
+	 */
+	transitionsSubmenu = function ( elem ) {
+		var objStyle = elem.style,
+		transitionSubmenu = "max-height " + elem.offsetHeight + "px";
+
+		objStyle.WebkitTransition = transitionSubmenu;
+		objStyle.MozTransition = transitionSubmenu;
+		objStyle.OTransition = transitionSubmenu;
+		objStyle.transition = transitionSubmenu;
+	}
 	
 } )();
 

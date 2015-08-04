@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chuchadon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2015-07-03 06:29:22+00:00\n"
+"POT-Creation-Date: 2015-08-04 08:20:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,21 +14,11 @@ msgstr ""
 "X-Generator: grunt-wp-i18n 0.5.0\n"
 "Language: en_US\n"
 
-#: 404.php:15
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the "
-"links below or a search?"
-msgstr ""
-
-#: 404.php:27
+#: 404.php:22
 msgid "Most Used Categories"
 msgstr ""
 
-#: 404.php:44
+#: 404.php:39
 #. translators: %1$s: smiley
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
@@ -41,14 +31,15 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: archive-jetpack-testimonial.php:50 content-audio.php:40
-#: content-child-pages.php:40 content-jetpack-portfolio.php:40
-#: content-page.php:32 content-video.php:40 content.php:38 image.php:38
-#: index.php:37 search.php:30
+#: archive-jetpack-testimonial.php:50 image.php:38 index.php:37 search.php:30
+#: template-parts/content-audio.php:52
+#: template-parts/content-jetpack-portfolio.php:40
+#: template-parts/content-page.php:32 template-parts/content-video.php:52
+#: template-parts/content.php:48
 msgid "Page"
 msgstr ""
 
-#: area-testimonial.php:25 loop-meta.php:24
+#: area-testimonial.php:25 loop-meta.php:27
 msgid "Testimonials"
 msgstr ""
 
@@ -64,56 +55,6 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:28 content-audio.php:47 content-link.php:50
-#: content-status.php:30 content-video.php:47 content.php:45
-msgid "Posted in %s"
-msgstr ""
-
-#: content-aside.php:29 content-audio.php:48 content-jetpack-portfolio.php:48
-#: content-link.php:51 content-status.php:31 content-video.php:48
-#: content.php:46
-msgid "Tagged %s"
-msgstr ""
-
-#: content-audio.php:33 content-child-pages.php:33
-#: content-jetpack-portfolio.php:33 content-jetpack-testimonial.php:23
-#: content-jetpack-testimonial.php:68 content-link.php:42 content-page.php:25
-#: content-video.php:33 content.php:31 functions.php:300
-#. translators: %s: Name of current post
-#. Translators: The %s is the post title shown to screen readers.
-msgid "Read more %s"
-msgstr ""
-
-#: content-audio.php:38 content-child-pages.php:38
-#: content-jetpack-portfolio.php:38 content-page.php:30 content-video.php:38
-#: content.php:36 image.php:36
-msgid "Pages:"
-msgstr ""
-
-#: content-jetpack-portfolio.php:47
-msgid "Portfolio in %s"
-msgstr ""
-
-#: content-none.php:16
-msgid "Nothing Found"
-msgstr ""
-
-#: content-none.php:22
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: content-none.php:27
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: content-none.php:35
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
 #: footer.php:34
 msgid "http://wordpress.org/"
 msgstr ""
@@ -126,60 +67,86 @@ msgstr ""
 msgid "Theme %1$s by %2$s"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:167
 msgid "The main sidebar. It is displayed on the right or left side of the page."
 msgstr ""
 
-#: functions.php:134
+#: functions.php:177
 msgid "A sidebar located in the header of the site."
 msgstr ""
 
-#: functions.php:144
+#: functions.php:187
 msgid "A sidebar located in the footer of the site."
 msgstr ""
 
-#: functions.php:154
+#: functions.php:197
 msgid "A sidebar located in the Front Page Template."
 msgstr ""
 
-#: functions.php:235 menu-primary.php:30
+#: functions.php:278 menus/menu-buttons.php:23
+msgid "Expand Menu"
+msgstr ""
+
+#: functions.php:279
+msgid "Collapse Menu"
+msgstr ""
+
+#: functions.php:280 menus/menu-buttons.php:34
 msgid "Expand Search"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:281
 msgid "Collapse Search"
 msgstr ""
 
-#: functions.php:237 menu-primary.php:36
-msgid "Expand Header Sidebar"
-msgstr ""
-
-#: functions.php:238
-msgid "Collapse Header Sidebar"
-msgstr ""
-
-#: functions.php:239 menu-primary.php:43
+#: functions.php:282 menus/menu-buttons.php:40
 msgid "Expand Social Menu"
 msgstr ""
 
-#: functions.php:240
+#: functions.php:283
 msgid "Collapse Social Menu"
 msgstr ""
 
-#: functions.php:246
+#: functions.php:284 menus/menu-buttons.php:47
+msgid "Expand Header Sidebar"
+msgstr ""
+
+#: functions.php:285
+msgid "Collapse Header Sidebar"
+msgstr ""
+
+#: functions.php:291
 msgid "Expand child menu"
 msgstr ""
 
-#: functions.php:247
+#: functions.php:292
 msgid "Collapse child menu"
+msgstr ""
+
+#: functions.php:345 template-parts/content-audio.php:45
+#: template-parts/content-jetpack-portfolio.php:33
+#: template-parts/content-jetpack-testimonial.php:23
+#: template-parts/content-jetpack-testimonial.php:68
+#: template-parts/content-link.php:44 template-parts/content-page.php:25
+#: template-parts/content-video.php:45 template-parts/content.php:41
+#. Translators: The %s is the post title shown to screen readers.
+#. translators: %s: Name of current post
+msgid "Read more %s"
 msgstr ""
 
 #: header.php:26
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:80
+#: header.php:48
 msgid "Breadcrumbs"
+msgstr ""
+
+#: image.php:36 template-parts/content-audio.php:50
+#: template-parts/content-jetpack-portfolio.php:38
+#: template-parts/content-page.php:30 template-parts/content-video.php:50
+#: template-parts/content.php:46
+msgid "Pages:"
 msgstr ""
 
 #: inc/breadcrumb-trail.php:177
@@ -198,7 +165,7 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/breadcrumb-trail.php:182 loop-meta.php:17
+#: inc/breadcrumb-trail.php:182 loop-meta.php:20
 #. Translators: %s is the search query. The HTML entities are opening and
 #. closing curly quotes.
 msgid "Search results for &#8220;%s&#8221;"
@@ -274,125 +241,133 @@ msgstr ""
 msgid "%s Callout URL text"
 msgstr ""
 
-#: inc/customizer.php:198
-msgid "Hide testimonials"
+#: inc/customizer.php:196
+msgid "Featured area after Sidebar"
 msgstr ""
 
-#: inc/customizer.php:199
-msgid "Check this if you want to hide testimonials from the Front Page Template."
-msgstr ""
-
-#: inc/customizer.php:218
-msgid "Testimonials after featured area"
-msgstr ""
-
-#: inc/customizer.php:219
+#: inc/customizer.php:197
 msgid ""
-"Check this if you want to move testimonials after Featured area in the "
-"Front Page Template."
+"Check this if you want to move Featured area after Front Page Sidebar in "
+"the Front Page Template."
+msgstr ""
+
+#: inc/customizer.php:214
+msgid "Blog Posts"
 msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Child Pages"
 msgstr ""
 
-#: inc/customizer.php:239
-msgid "Blog Posts"
+#: inc/customizer.php:216
+msgid "Nothing"
 msgstr ""
 
-#: inc/customizer.php:240
-msgid "Portfolios"
-msgstr ""
-
-#: inc/customizer.php:247
+#: inc/customizer.php:223
 msgid "Featured Content"
 msgstr ""
 
-#: inc/customizer.php:248
+#: inc/customizer.php:224
 msgid ""
-"Select do you want to feature Child Pages, Blog Posts or Portfolios in "
-"Front Page."
+"Select do you want to feature Blog Posts, Child Pages or nothing in Front "
+"Page."
 msgstr ""
 
-#: inc/customizer.php:270
+#: inc/customizer.php:246
 msgid "Callout Image"
 msgstr ""
 
-#: inc/customizer.php:271
+#: inc/customizer.php:247
 msgid ""
 "Add Callout Image which can be map or product image for example. "
 "Recommended width is 1920px."
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:267
 msgid "Callout image alt text"
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:287
 msgid "Callout image URL"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:300
 msgid "Background Settings"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:319
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:341
 msgid "Header Color Opacity."
 msgstr ""
 
-#: inc/customizer.php:365
+#: inc/customizer.php:342
 msgid "Set Header Color opacity."
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:366
+msgid "Callout background"
+msgstr ""
+
+#: inc/customizer.php:386
+msgid "Callout Background Color"
+msgstr ""
+
+#: inc/customizer.php:408
+msgid "Callout Background Color Opacity."
+msgstr ""
+
+#: inc/customizer.php:409
+msgid "Set Callout Background Color Opacity."
+msgstr ""
+
+#: inc/customizer.php:434
 msgid "Subsidiary sidebar background"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:454
 msgid "Subsidiary Sidebar Background Color"
 msgstr ""
 
-#: inc/customizer.php:431
+#: inc/customizer.php:476
 msgid "Subsidiary Sidebar Background Color Opacity."
 msgstr ""
 
-#: inc/customizer.php:432
+#: inc/customizer.php:477
 msgid "Set Subsidiary Sidebar Background Color Opacity."
 msgstr ""
 
-#: inc/customizer.php:452
+#: inc/customizer.php:497
 msgid "Portfolio Settings"
 msgstr ""
 
-#: inc/customizer.php:471
+#: inc/customizer.php:516
 msgid "Portfolio Page Title"
 msgstr ""
 
-#: inc/customizer.php:491
+#: inc/customizer.php:536
 msgid "Portfolio Page Description"
 msgstr ""
 
-#: inc/customizer.php:506
+#: inc/customizer.php:551
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/customizer.php:525
+#: inc/customizer.php:570
 msgid "Hide Footer"
 msgstr ""
 
-#: inc/customizer.php:526
+#: inc/customizer.php:571
 msgid "Check this if you want to hide Footer content."
 msgstr ""
 
-#: inc/customizer.php:546
+#: inc/customizer.php:591
 msgid "Footer text"
 msgstr ""
 
-#: inc/customizer.php:547
+#: inc/customizer.php:592
 msgid "Enter Footer text which replaces default text."
 msgstr ""
 
@@ -424,27 +399,33 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: loop-meta.php:18
+#: loop-meta.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: loop-meta.php:17
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
+msgstr ""
+
+#: loop-meta.php:21
 msgid "You are browsing the search results for &#8220;%s&#8221;"
 msgstr ""
 
-#: loop-meta.php:27
+#: loop-meta.php:30
 msgid "Portfolio"
 msgstr ""
 
-#: loop-meta.php:28
+#: loop-meta.php:31
 msgid "Check out our latest work"
 msgstr ""
 
-#: menu-primary.php:21
-msgid "Expand Menu"
-msgstr ""
-
-#: menu-primary.php:51 menu-primary.php:52
+#: menus/menu-primary.php:11 menus/menu-primary.php:12
 msgid "Top Menu"
 msgstr ""
 
-#: menu-social.php:13 menu-social.php:14
+#: menus/menu-social.php:11 menus/menu-social.php:12
 msgid "Social Menu"
 msgstr ""
 
@@ -462,6 +443,43 @@ msgstr ""
 
 #: single.php:21
 msgid "Previous:"
+msgstr ""
+
+#: template-parts/content-aside.php:30 template-parts/content-audio.php:59
+#: template-parts/content-link.php:52 template-parts/content-status.php:32
+#: template-parts/content-video.php:59 template-parts/content.php:55
+msgid "Posted in %s"
+msgstr ""
+
+#: template-parts/content-aside.php:31 template-parts/content-audio.php:60
+#: template-parts/content-jetpack-portfolio.php:48
+#: template-parts/content-link.php:53 template-parts/content-status.php:33
+#: template-parts/content-video.php:60 template-parts/content.php:56
+msgid "Tagged %s"
+msgstr ""
+
+#: template-parts/content-jetpack-portfolio.php:47
+msgid "Portfolio in %s"
+msgstr ""
+
+#: template-parts/content-none.php:16
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:27
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:35
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -505,21 +523,6 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: content-jetpack-testimonial.php:30
-msgctxt "dash before testimonial title"
-msgid "&ndash;"
-msgstr ""
-
-#: content-link.php:20
-msgctxt "Arrow for link post format in right to left languages"
-msgid "&larr;"
-msgstr ""
-
-#: content-link.php:22
-msgctxt "Arrow for link post format in left to right languages"
-msgid "&rarr;"
-msgstr ""
-
 #: footer.php:35
 msgctxt "Separator in site info."
 msgid "&middot;"
@@ -540,27 +543,42 @@ msgctxt "nav menu location"
 msgid "Social"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:128
+msgctxt "theme layout"
+msgid "1 Column"
+msgstr ""
+
+#: functions.php:138
+msgctxt "theme layout"
+msgid "2 Columns: Content / Sidebar"
+msgstr ""
+
+#: functions.php:148
+msgctxt "theme layout"
+msgid "2 Columns: Sidebar / Content"
+msgstr ""
+
+#: functions.php:166
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:176
 msgctxt "sidebar"
 msgid "Header"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:186
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:196
 msgctxt "sidebar"
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:224
 #. Translators: If there are characters in your language that are not
 #. * supported by Open Sans, translate this to 'off'. Do not translate
 #. * into your own language.
@@ -568,15 +586,15 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:230
 #. Translators: If there are characters in your language that are not
-#. * supported by Nunito, translate this to 'off'. Do not translate
+#. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-msgctxt "Nunito font: on or off"
+msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:321
+#: functions.php:366
 msgctxt "dash before menu item description"
 msgid "&ndash;"
 msgstr ""
@@ -634,12 +652,6 @@ msgctxt "position of callout text"
 msgid "Bottom"
 msgstr ""
 
-#: inc/functions-layouts.php:50
-#. Translators: Default theme layout option.
-msgctxt "theme layout"
-msgid "Default"
-msgstr ""
-
 #: inc/template-tags.php:49
 msgctxt "Used before publish date."
 msgid "Posted on"
@@ -674,4 +686,19 @@ msgstr ""
 #: sidebar-subsidiary.php:12
 msgctxt "Sidebar aria label"
 msgid "Subsidiary Sidebar"
+msgstr ""
+
+#: template-parts/content-jetpack-testimonial.php:30
+msgctxt "dash before testimonial title"
+msgid "&ndash;"
+msgstr ""
+
+#: template-parts/content-link.php:22
+msgctxt "Arrow for link post format in right to left languages"
+msgid "&larr;"
+msgstr ""
+
+#: template-parts/content-link.php:24
+msgctxt "Arrow for link post format in left to right languages"
+msgid "&rarr;"
 msgstr ""

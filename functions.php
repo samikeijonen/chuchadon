@@ -54,10 +54,10 @@ function chuchadon_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1260, 9999, false );
+	set_post_thumbnail_size( 800, 450, true );
 	
 	/* Add custom image sizes. */
-	add_image_size( 'chuchadon-site-logo', 300, 300, true );
+	add_image_size( 'chuchadon-site-logo', 30, 30, true );
 	add_image_size( 'chuchadon-testimonial', 140, 140, true );
 
 	/* This theme uses wp_nav_menu() in 3 locations. */
@@ -221,33 +221,33 @@ function chuchadon_fonts_url() {
 	 * supported by Open Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$open_sans = _x( 'on', 'Open Sans font: on or off', 'toivo-lite-green' );
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'chuchadon' );
 	
 	/* Translators: If there are characters in your language that are not
-	 * supported by Nunito, translate this to 'off'. Do not translate
+	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$nunito = _x( 'on', 'Nunito font: on or off', 'toivo-lite-green' );
+	$lato = _x( 'on', 'Lato font: on or off', 'chuchadon' );
 	
-	if ( 'off' !== $open_sans || 'off' !== $nunito ) {
+	if ( 'off' !== $open_sans || 'off' !== $lato ) {
 		
 		$font_families = array();
 		
 		if ( 'off' !== $open_sans )
-			$font_families[] = 'Open Sans:300italic,400italic,700italic,400,700,300';
+			$font_families[] = 'Open Sans:400,700,300,300italic,400italic,700italic';
 		
-		if ( 'off' !== $nunito )
-			$font_families[] = 'Nunito:400,700,300';
+		if ( 'off' !== $lato )
+			$font_families[] = 'Dosis:400,600,700,800';
 		
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
 		
-		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 	
-	return $fonts_url;
+	return esc_url_raw( $fonts_url );
 }
 
 /**
@@ -273,7 +273,7 @@ function chuchadon_scripts() {
 	wp_enqueue_script( 'chuchadon-navigation', get_template_directory_uri() . '/js/responsive-nav' . CHUCHADON_SUFFIX . '.js', array(), CHUCHADON_VERSION, true );
 	
 	/* Enqueue responsive navigation settings. */
-	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation' ), CHUCHADON_VERSION, true );
+	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation', 'jquery' ), CHUCHADON_VERSION, true );
 	wp_localize_script( 'chuchadon-settings', 'screenReaderTexts', array(
 		'expandMenu'            => esc_html__( 'Expand Menu', 'chuchadon' ),
 		'collapseMenu'          => esc_html__( 'Collapse Menu', 'chuchadon' ),
@@ -392,9 +392,9 @@ function chuchadon_extra_layout_classes( $classes ) {
 	/* Add global layout. */
 	$classes[] = 'layout-' . sanitize_html_class( get_theme_mod( 'theme_layout', '1c' ) );
 	
-	/* Add 'no-content' class in Front Page Template if content is empty. */
-	if ( is_page_template( 'pages/front-page.php' ) && '' == trim( get_post_field( 'post_content', get_the_ID() ) ) ) {
-		$classes[] = 'no-content';
+	/* Add 'has-content' class in Front Page Template if content is empty. */
+	if ( is_page_template( 'pages/front-page.php' ) && '' != trim( get_post_field( 'post_content', get_the_ID() ) ) ) {
+		$classes[] = 'has-content';
     }
 	
 	/* Adds a class of group-blog to blogs with more than 1 published author. */
