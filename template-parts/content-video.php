@@ -8,8 +8,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php hybrid_attr( 'post' ); ?>>
 
-	<?php chuchadon_post_thumbnail(); ?>
-
 	<?php echo ( $video = hybrid_media_grabber( array( 'type' => 'video', 'split_media' => true, 'before' => '<div class="entry-media">', 'after' => '</div>' ) ) ); ?>
 
 	<div class="entry-inner">
@@ -56,8 +54,7 @@
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
-				<?php chuchadon_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'chuchadon' ) ) ); ?>
-				<?php chuchadon_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'chuchadon' ), 'before' => '<br />' ) ); ?>
+				<?php chuchadon_post_terms( array( 'taxonomy' => 'post_tag', 'sep' => '', 'text' => __( '<span class="screen-reader-text">Tagged</span> %s', 'chuchadon' ) ) ); ?>
 			</footer><!-- .entry-footer -->
 		
 		<?php endif; // End check for single post ?>

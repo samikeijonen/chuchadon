@@ -19,9 +19,13 @@
 	
 	<?php get_sidebar( 'subsidiary' ); // Loads the sidebar-subsidiary.php template. ?>
 	
+	<?php get_template_part( 'menus/menu', 'social-footer' ); // Loads the menus/menu-social-footer.php template. ?>
+	
 	<?php if( !get_theme_mod( 'hide_footer' ) ) : // Hide footer. ?>
 	
-		<footer id="colophon" class="site-footer" role="contentinfo" <?php hybrid_attr( 'footer' ); ?>>
+		<?php has_nav_menu( 'social-footer' ) ? $extra_class = ' social-nav-footer-active' : $extra_class = ''; // Check for active social menu. ?>
+	
+		<footer id="colophon" class="site-footer<?php echo esc_attr( $extra_class ); ?>" role="contentinfo" <?php hybrid_attr( 'footer' ); ?>>
 		
 			<div class="site-info">
 			

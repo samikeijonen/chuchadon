@@ -13,3 +13,10 @@ body#tinymce {
 	margin: 16px 3%;
 	max-width: 700px;
 }
+
+.wp-caption-text,
+body .wp-caption-dd {
+	font-size: 0.85em;
+	margin: 6px 0 1em 0;
+	text-align: center;
+}

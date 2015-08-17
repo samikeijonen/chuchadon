@@ -167,11 +167,13 @@ function chuchadon_post_thumbnail() {
 
 	if ( has_post_thumbnail() && !is_singular() || is_page_template( 'pages/front-page.php' ) || is_page_template( 'pages/child-pages.php' ) ) : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-			<?php
-				the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
-			?>
-		</a>
+		<div class="entry-image">
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<?php
+					the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
+				?>
+			</a>
+		</div><!-- .entry-image -->
 		
 	<?php endif; // End is_singular()
 }

@@ -36,6 +36,8 @@
 	<?php do_action( 'chuchadon_before_header' ); // Hook before header. ?>
 	
 	<div class="site-title-desc clear">
+	
+		<?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
 		
 		<p id="home-title" class="home-title" <?php hybrid_attr( 'site-title' ); ?>>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -51,11 +53,9 @@
 	
 	</div><!-- .site-title-desc -->
 	
-	<header id="masthead" class="site-header" role="banner" aria-labelledby="site-title" <?php hybrid_attr( 'header' ); ?>>
+	<header id="masthead" class="site-header" role="banner" <?php hybrid_attr( 'header' ); ?>>
 		
 		<div class="wrap">
-		
-			<?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
 	
 			<div class="site-branding">
 			

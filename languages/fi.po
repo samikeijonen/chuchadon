@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Toivo 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2015-07-03 09:29+0300\n"
-"PO-Revision-Date: 2015-07-03 09:34+0300\n"
+"POT-Creation-Date: 2015-08-13 11:26+0300\n"
+"PO-Revision-Date: 2015-08-13 11:27+0300\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -15,24 +15,12 @@ msgstr ""
 "X-Generator: Poedit 1.8.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:15
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ups! Tätä sivua ei löydy."
-
-#: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
-"alla olevista linkeistä tai etsiä haluamaasi."
-
-#: 404.php:27
+#: 404.php:22
 msgid "Most Used Categories"
 msgstr "Käytetyimmät kategoriat"
 
 #. translators: %1$s: smiley
-#: 404.php:44
+#: 404.php:39
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Koita etsiä kuukausiarkistosta. %1$s"
 
@@ -44,18 +32,22 @@ msgstr "Edellinen sivu"
 msgid "Next page"
 msgstr "Seuraava sivu"
 
-#: archive-jetpack-testimonial.php:50 content-audio.php:40
-#: content-child-pages.php:40 content-jetpack-portfolio.php:40
-#: content-page.php:32 content-video.php:40 content.php:38 image.php:38
-#: index.php:37 search.php:30
+#: archive-jetpack-testimonial.php:50 image.php:38 index.php:37 search.php:30
+#: template-parts/content-audio.php:52 template-parts/content-page.php:32
+#: template-parts/content-video.php:50 template-parts/content.php:48
 msgid "Page"
 msgstr "Sivu"
 
-#: area-testimonial.php:25 loop-meta.php:24
+#: area-featured.php:44 area-featured.php:47 area-featured.php:48
+#: inc/customizer/front-page.php:132
+msgid "Articles"
+msgstr "Artikkelit"
+
+#: area-testimonial.php:25 loop-meta.php:27
 msgid "Testimonials"
 msgstr "Suositukset"
 
-#: comment.php:21
+#: comment.php:26
 msgid "Your comment is awaiting moderation."
 msgstr "Kommenttisi odottaa hyväksyntää."
 
@@ -67,60 +59,9 @@ msgstr "Jätä kommentti"
 msgid "Comments are closed."
 msgstr "Kommentointi on suljettu."
 
-#: content-aside.php:28 content-audio.php:47 content-link.php:50
-#: content-status.php:30 content-video.php:47 content.php:45
-msgid "Posted in %s"
-msgstr "Artikkeli kategoriassa %s"
-
-#: content-aside.php:29 content-audio.php:48 content-jetpack-portfolio.php:48
-#: content-link.php:51 content-status.php:31 content-video.php:48
-#: content.php:46
-msgid "Tagged %s"
-msgstr "Avainsanat %s"
-
-#. translators: %s: Name of current post
-#. Translators: The %s is the post title shown to screen readers.
-#: content-audio.php:33 content-child-pages.php:33
-#: content-jetpack-portfolio.php:33 content-jetpack-testimonial.php:23
-#: content-jetpack-testimonial.php:68 content-link.php:42 content-page.php:25
-#: content-video.php:33 content.php:31 functions.php:300
-msgid "Read more %s"
-msgstr "Lue lisää %s"
-
-#: content-audio.php:38 content-child-pages.php:38
-#: content-jetpack-portfolio.php:38 content-page.php:30 content-video.php:38
-#: content.php:36 image.php:36
-msgid "Pages:"
-msgstr "Sivut:"
-
-#: content-jetpack-portfolio.php:47
-msgid "Portfolio in %s"
-msgstr "Portfolio kategoriassa %s"
-
-#: content-none.php:16
-msgid "Nothing Found"
-msgstr "Mitään ei löytynyt"
-
-#: content-none.php:22
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: entry-meta.php:13
+msgid "<span class=\"screen-reader-text\">Posted in</span> %s"
 msgstr ""
-"Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s"
-"\">Aloita tästä</a>."
-
-#: content-none.php:27
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen eri "
-"hakusanoilla."
-
-#: content-none.php:35
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
 
 #: footer.php:34
 msgid "http://wordpress.org/"
@@ -134,64 +75,71 @@ msgstr "Voimanlähteenä %s"
 msgid "Theme %1$s by %2$s"
 msgstr "Teeman %1$s tekijä %2$s"
 
-#: functions.php:124
+#: functions.php:167
 msgid ""
 "The main sidebar. It is displayed on the right or left side of the page."
 msgstr ""
 "Päävimpainalue. Tähän liitetyt vimpaimet näkyvät sisällön oikealla tai "
 "vasemmalla puolella."
 
-#: functions.php:134
+#: functions.php:177
 msgid "A sidebar located in the header of the site."
 msgstr "Sivupalkki sijaitsee sivun yläreunassa."
 
-#: functions.php:144
+#: functions.php:187
 msgid "A sidebar located in the footer of the site."
 msgstr "Sivupalkki sijaitsee alapalkissa."
 
-#: functions.php:154
+#: functions.php:197
 msgid "A sidebar located in the Front Page Template."
 msgstr "Tähän liitetyt vimpaimet näkyvät Etusivu-sivupohjassa."
 
-#: functions.php:235 menu-primary.php:30
-msgid "Expand Search"
-msgstr "Näytä haku"
+#: functions.php:278 functions.php:279 menus/menu-buttons.php:23
+msgid "Menu"
+msgstr "Menu"
 
-#: functions.php:236
-msgid "Collapse Search"
-msgstr "Piilota haku"
+#: functions.php:280 functions.php:281 menus/menu-buttons.php:34
+msgid "Search"
+msgstr "Haku"
 
-#: functions.php:237 menu-primary.php:36
-msgid "Expand Header Sidebar"
-msgstr "Näytä otsakkeen sivupalkki"
+#: functions.php:282 functions.php:283 menus/menu-buttons.php:40
+#, fuzzy
+msgid "Social"
+msgstr "Some"
 
-#: functions.php:238
-msgid "Collapse Header Sidebar"
-msgstr ""
+#: functions.php:284 functions.php:285 menus/menu-buttons.php:47
+msgid "Info"
+msgstr "Info"
 
-#: functions.php:239 menu-primary.php:43
-msgid "Expand Social Menu"
-msgstr "Näytä some-valikko"
-
-#: functions.php:240
-msgid "Collapse Social Menu"
-msgstr "Piilota some-valikko"
-
-#: functions.php:246
+#: functions.php:291
 msgid "Expand child menu"
 msgstr "Avaa alavalikko"
 
-#: functions.php:247
+#: functions.php:292
 msgid "Collapse child menu"
 msgstr "Sulje alavalikko"
+
+#. Translators: The %s is the post title shown to screen readers.
+#. translators: %s: Name of current post
+#: functions.php:345 template-parts/content-audio.php:45
+#: template-parts/content-link.php:44 template-parts/content-page.php:25
+#: template-parts/content-video.php:43 template-parts/content.php:41
+msgid "Read more %s"
+msgstr "Lue lisää %s"
 
 #: header.php:26
 msgid "Skip to content"
 msgstr "Hyppää sisältöön"
 
-#: header.php:80
+#: header.php:50
 msgid "Breadcrumbs"
 msgstr "Murupolku"
+
+#: image.php:36 template-parts/content-audio.php:50
+#: template-parts/content-page.php:30 template-parts/content-video.php:48
+#: template-parts/content.php:46
+msgid "Pages:"
+msgstr "Sivut:"
 
 #: inc/breadcrumb-trail.php:177
 msgid "Browse:"
@@ -211,7 +159,7 @@ msgstr "Arkistot"
 
 #. Translators: %s is the search query. The HTML entities are opening and
 #. closing curly quotes.
-#: inc/breadcrumb-trail.php:182 loop-meta.php:17
+#: inc/breadcrumb-trail.php:182 loop-meta.php:20
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "Hakutulokset haulle  &#8220;%s&#8221;"
 
@@ -233,108 +181,171 @@ msgstr "Viikko %s"
 #. Translators: Header image description.
 #: inc/custom-header.php:30
 msgid "Default Header Image"
+msgstr "Oletus otsakekuva"
+
+#: inc/customizer/background.php:14
+msgid "Background Settings"
+msgstr "Taustakuvan asetukset"
+
+#: inc/customizer/background.php:33
+msgid "Header Background Color"
+msgstr "Yläpalkin taustaväri"
+
+#: inc/customizer/background.php:55
+msgid "Header Color Opacity."
+msgstr "Otsakkeen värin läpinäkyvyys."
+
+#: inc/customizer/background.php:56
+msgid "Set Header Color opacity."
+msgstr "Aseta otsakkeen värin läpinäkyvyys."
+
+#: inc/customizer/background.php:80
+#, fuzzy
+msgid "Callout background"
+msgstr "Callout-kuva"
+
+#: inc/customizer/background.php:100 inc/customizer/background.php:167
+#, fuzzy
+msgid "Callout Background Color"
+msgstr "Yläpalkin taustaväri"
+
+#: inc/customizer/background.php:122
+#, fuzzy
+msgid "Callout Background Color Opacity."
+msgstr "Alapalkin taustavärin läpinäkyvyys"
+
+#: inc/customizer/background.php:123 inc/customizer/background.php:190
+#, fuzzy
+msgid "Set Callout Background Color Opacity."
+msgstr "Aseta alapalkin taustavärin läpinäkyvyys."
+
+#: inc/customizer/background.php:147
+msgid "Bottom Callout background"
 msgstr ""
 
-#: inc/customizer.php:21
-msgid "Theme Settings"
-msgstr "Teeman asetukset"
+#: inc/customizer/background.php:189
+#, fuzzy
+msgid "Bottom Callout Background Color Opacity."
+msgstr "Alapalkin taustavärin läpinäkyvyys"
 
-#: inc/customizer.php:32
-msgid "Layouts"
-msgstr "Ulkoasu"
+#: inc/customizer/background.php:215
+msgid "Subsidiary sidebar background"
+msgstr "Alapalkin taustakuva"
 
-#: inc/customizer.php:48
-msgid "1 Column"
-msgstr "1 sarake"
+#: inc/customizer/background.php:235
+msgid "Subsidiary Sidebar Background Color"
+msgstr "Alapalkin taustaväri"
 
-#: inc/customizer.php:49
-msgid "2 Columns: Content / Sidebar"
-msgstr "Kaksi saraketta: sisältö / sivupalkki"
+#: inc/customizer/background.php:257
+msgid "Subsidiary Sidebar Background Color Opacity."
+msgstr "Alapalkin taustavärin läpinäkyvyys"
 
-#: inc/customizer.php:50
-msgid "2 Columns: Sidebar / Content"
-msgstr "Kaksi saraketta: sivupalkki / sisältö"
+#: inc/customizer/background.php:258
+msgid "Set Subsidiary Sidebar Background Color Opacity."
+msgstr "Aseta alapalkin taustavärin läpinäkyvyys."
 
-#: inc/customizer.php:57
-msgid "Global Layout"
-msgstr "Globaali ulkoasu"
+#: inc/customizer/footer.php:14
+msgid "Footer Settings"
+msgstr "Alapalkin asetukset"
 
-#: inc/customizer.php:71
+#: inc/customizer/footer.php:33
+msgid "Hide Footer"
+msgstr "Piilota sivun alareunassa oleva teksti"
+
+#: inc/customizer/footer.php:34
+msgid "Check this if you want to hide Footer content."
+msgstr "Valitse tämä, jos haluta piilottaa sivun alareunassa olevan tekstin."
+
+#: inc/customizer/footer.php:54
+msgid "Footer text"
+msgstr "Alapalkin teksti"
+
+#: inc/customizer/footer.php:55
+msgid "Enter Footer text which replaces default text."
+msgstr "Kirjoita sivun alareunassa oleva teksti, mikä korvaa oletustekstin."
+
+#: inc/customizer/front-page.php:14
 msgid "Front Page Settings"
 msgstr "Etusivun asetukset"
 
-#: inc/customizer.php:72
+#: inc/customizer/front-page.php:15
 msgid ""
 "The first Callout is for top callout section and the second one is for "
 "bottom Callout section."
 msgstr ""
 "Ensimmäinen Callout-osio on ylempää Callout-osiota varten ja toinen alempaa."
 
-#: inc/customizer.php:112
-msgid "%s Callout title"
-msgstr "Callout-otsikko %s"
-
-#: inc/customizer.php:132
+#: inc/customizer/front-page.php:56
 msgid "%s Callout text"
 msgstr "Etusivun \"Callout\" teksti %s"
 
-#: inc/customizer.php:152
+#: inc/customizer/front-page.php:76
 msgid "%s Callout URL"
 msgstr "Etusivun \"Callout\" URL %s"
 
-#: inc/customizer.php:172
+#: inc/customizer/front-page.php:96
 msgid "%s Callout URL text"
 msgstr "Etusivun \"Callout\" URL:n teksti %s"
 
-#: inc/customizer.php:198
-msgid "Hide testimonials"
-msgstr "Piilota suositukset"
+#: inc/customizer/front-page.php:120
+#, fuzzy
+msgid "Featured area after Sidebar"
+msgstr "Otsakkeen vimpainalue"
 
-#: inc/customizer.php:199
+#: inc/customizer/front-page.php:121
+#, fuzzy
 msgid ""
-"Check this if you want to hide testimonials from the Front Page Template."
-msgstr "Valitse tämä, jos haluta piilottaa suositukset Etusivu-sivupohjassa."
-
-#: inc/customizer.php:218
-msgid "Testimonials after featured area"
-msgstr "Suositukset \"Featured\"-alueen jälkeen"
-
-#: inc/customizer.php:219
-msgid ""
-"Check this if you want to move testimonials after Featured area in the Front "
-"Page Template."
+"Check this if you want to move Featured area after Front Page Sidebar in the "
+"Front Page Template."
 msgstr ""
 "Valitse tämä, jos haluta näyttää suositukset \"Featured\"-alueen jälkeen."
+
+#: inc/customizer/front-page.php:141
+#, fuzzy
+msgid "Featured area title"
+msgstr "Etusivun \"featured\"-sisältö"
+
+#: inc/customizer/front-page.php:161
+#, fuzzy
+msgid "Featured area URL"
+msgstr "Etusivun \"featured\"-sisältö"
+
+#: inc/customizer/front-page.php:181
+#, fuzzy
+msgid "Featured area URL text"
+msgstr "Etusivun \"featured\"-sisältö"
+
+#: inc/customizer/front-page.php:198
+msgid "Blog Posts"
+msgstr "Blogikirjoitukset"
 
 #. Template Name of the plugin/theme
 msgid "Child Pages"
 msgstr "Alasivut"
 
-#: inc/customizer.php:239
-msgid "Blog Posts"
-msgstr "Blogikirjoitukset"
+#: inc/customizer/front-page.php:200
+#, fuzzy
+msgid "Nothing"
+msgstr "Ei mitään"
 
-#: inc/customizer.php:240
-msgid "Portfolios"
-msgstr "Portfoliot"
-
-#: inc/customizer.php:247
+#: inc/customizer/front-page.php:207
 msgid "Featured Content"
 msgstr "Etusivun \"featured\"-sisältö"
 
-#: inc/customizer.php:248
+#: inc/customizer/front-page.php:208
+#, fuzzy
 msgid ""
-"Select do you want to feature Child Pages, Blog Posts or Portfolios in Front "
+"Select do you want to feature Blog Posts, Child Pages or nothing in Front "
 "Page."
 msgstr ""
 "Valitse haluatko näyttää etusivulla alasivut, blogikirjoitukset vai "
 "portfoliot."
 
-#: inc/customizer.php:270
+#: inc/customizer/front-page.php:230
 msgid "Callout Image"
 msgstr "Callout-kuva"
 
-#: inc/customizer.php:271
+#: inc/customizer/front-page.php:231
 msgid ""
 "Add Callout Image which can be map or product image for example. Recommended "
 "width is 1920px."
@@ -342,77 +353,37 @@ msgstr ""
 "Lisää Callout-kuva, joka voi esimerkiksi olla karttakuva tai tuotekuva. "
 "Suositeltu kuvan leveys on 1920px."
 
-#: inc/customizer.php:291
+#: inc/customizer/front-page.php:251
 msgid "Callout image alt text"
 msgstr "Callout-kuvan alt-teksti"
 
-#: inc/customizer.php:311
+#: inc/customizer/front-page.php:271
 msgid "Callout image URL"
 msgstr "Callout-kuvan URL"
 
-#: inc/customizer.php:324
-msgid "Background Settings"
-msgstr "Taustakuvan asetukset"
+#: inc/customizer/layout.php:14
+msgid "Layouts"
+msgstr "Ulkoasu"
 
-#: inc/customizer.php:343
-msgid "Header Background Color"
-msgstr "Yläpalkin taustaväri"
+#: inc/customizer/layout.php:30
+msgid "1 Column"
+msgstr "1 sarake"
 
-#: inc/customizer.php:364
-msgid "Header Color Opacity."
-msgstr "Otsakkeen värin läpinäkyvyys."
+#: inc/customizer/layout.php:31
+msgid "2 Columns: Content / Sidebar"
+msgstr "Kaksi saraketta: sisältö / sivupalkki"
 
-#: inc/customizer.php:365
-msgid "Set Header Color opacity."
-msgstr "Aseta otsakkeen värin läpinäkyvyys."
+#: inc/customizer/layout.php:32
+msgid "2 Columns: Sidebar / Content"
+msgstr "Kaksi saraketta: sivupalkki / sisältö"
 
-#: inc/customizer.php:390
-msgid "Subsidiary sidebar background"
-msgstr "Alapalkin taustakuva"
+#: inc/customizer/layout.php:39
+msgid "Global Layout"
+msgstr "Globaali ulkoasu"
 
-#: inc/customizer.php:410
-msgid "Subsidiary Sidebar Background Color"
-msgstr "Alapalkin taustaväri"
-
-#: inc/customizer.php:431
-msgid "Subsidiary Sidebar Background Color Opacity."
-msgstr "Alapalkin taustavärin läpinäkyvyys"
-
-#: inc/customizer.php:432
-msgid "Set Subsidiary Sidebar Background Color Opacity."
-msgstr "Aseta alapalkin taustavärin läpinäkyvyys."
-
-#: inc/customizer.php:452
-msgid "Portfolio Settings"
-msgstr "Portfolio asetukset"
-
-#: inc/customizer.php:471
-msgid "Portfolio Page Title"
-msgstr "Portfolio-sivun otsikko"
-
-#: inc/customizer.php:491
-msgid "Portfolio Page Description"
-msgstr "Portfolio-sivun kuvaus"
-
-#: inc/customizer.php:506
-msgid "Footer Settings"
-msgstr "Alapalkin asetukset"
-
-#: inc/customizer.php:525
-msgid "Hide Footer"
-msgstr "Piilota sivun alareunassa oleva teksti"
-
-#: inc/customizer.php:526
-msgid "Check this if you want to hide Footer content."
-msgstr "Valitse tämä, jos haluta piilottaa sivun alareunassa olevan tekstin."
-
-#: inc/customizer.php:546
-msgid "Footer text"
-msgstr "Alapalkin teksti"
-
-#: inc/customizer.php:547
-msgid "Enter Footer text which replaces default text."
-msgstr "Kirjoita sivun alareunassa oleva teksti, mikä korvaa oletustekstin."
+#: inc/customizer.php:21
+msgid "Theme Settings"
+msgstr "Teeman asetukset"
 
 #: inc/meta-boxes.php:22
 msgid "Header Callout text"
@@ -442,28 +413,35 @@ msgstr "&larr; Vanhemmat kommentit"
 msgid "Newer Comments &rarr;"
 msgstr "Uudemmat kommentit &rarr;"
 
-#: loop-meta.php:18
+#: loop-meta.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Tätä sivua ei löydy."
+
+#: loop-meta.php:17
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Näyttää siltä, että mitään ei löytynyt tästä osoitteesta. Koita navigoida "
+"alla olevista linkeistä tai etsiä haluamaasi."
+
+#: loop-meta.php:21
 msgid "You are browsing the search results for &#8220;%s&#8221;"
 msgstr "Selaat hakutuloksia haulle &#8220;%s&#8221;"
 
-#: loop-meta.php:27
+#: loop-meta.php:30
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: loop-meta.php:28
+#: loop-meta.php:31
 msgid "Check out our latest work"
 msgstr "Esittelyssä meidän viimeisimmät työt"
 
-#: menu-primary.php:21
-#, fuzzy
-msgid "Expand Menu"
-msgstr "Avaa alavalikko"
-
-#: menu-primary.php:51 menu-primary.php:52
+#: menus/menu-primary.php:11 menus/menu-primary.php:12
 msgid "Top Menu"
 msgstr "Ylävalikko"
 
-#: menu-social.php:13 menu-social.php:14
+#: menus/menu-social.php:11 menus/menu-social.php:12
 msgid "Social Menu"
 msgstr "Somevalikko"
 
@@ -472,16 +450,56 @@ msgid "Next"
 msgstr "Seuraava"
 
 #: single.php:18
-msgid "Next:"
-msgstr "Seuraava:"
+#, fuzzy
+msgid "Next post:"
+msgstr "Seuraava artikkeli:"
 
 #: single.php:20
 msgid "Previous"
 msgstr "Edellinen"
 
 #: single.php:21
-msgid "Previous:"
-msgstr "Edellinen:"
+#, fuzzy
+msgid "Previous post:"
+msgstr "Edellinen artikkeli:"
+
+#: template-parts/content-audio.php:59 template-parts/content-video.php:57
+#: template-parts/content.php:55
+msgid "<span class=\"screen-reader-text\">Tagged</span> %s"
+msgstr ""
+
+#: template-parts/content-link.php:52
+msgid "Posted in %s"
+msgstr "Artikkeli kategoriassa %s"
+
+#: template-parts/content-link.php:53
+msgid "Tagged %s"
+msgstr "Avainsanat %s"
+
+#: template-parts/content-none.php:16
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt"
+
+#: template-parts/content-none.php:22
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s"
+"\">Aloita tästä</a>."
+
+#: template-parts/content-none.php:27
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen eri "
+"hakusanoilla."
+
+#: template-parts/content-none.php:35
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
 
 #. Theme Name of the plugin/theme
 msgid "Chuchadon"
@@ -519,7 +537,13 @@ msgstr "https://foxland.fi"
 msgid "Front Page"
 msgstr "Etusivu"
 
-#: comment.php:29
+#: area-featured.php:53
+#, fuzzy
+msgctxt "Dash between featured title and link"
+msgid "&ndash;"
+msgstr "&ndash;"
+
+#: comment.php:19
 msgctxt "%1%s is for comment date"
 msgid "%1$s"
 msgstr "%1$s"
@@ -530,21 +554,6 @@ msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Yksi kommentti artikkeliin &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s kommenttia artikkeliin &ldquo;%2$s&rdquo;"
-
-#: content-jetpack-testimonial.php:30
-msgctxt "dash before testimonial title"
-msgid "&ndash;"
-msgstr "&ndash;"
-
-#: content-link.php:20
-msgctxt "Arrow for link post format in right to left languages"
-msgid "&larr;"
-msgstr "&larr;"
-
-#: content-link.php:22
-msgctxt "Arrow for link post format in left to right languages"
-msgid "&rarr;"
-msgstr "&rarr;"
 
 #: footer.php:35
 msgctxt "Separator in site info."
@@ -568,23 +577,41 @@ msgctxt "nav menu location"
 msgid "Social"
 msgstr "Some"
 
-#: functions.php:123
+#: functions.php:128
+#, fuzzy
+msgctxt "theme layout"
+msgid "1 Column"
+msgstr "1 sarake"
+
+#: functions.php:138
+#, fuzzy
+msgctxt "theme layout"
+msgid "2 Columns: Content / Sidebar"
+msgstr "Kaksi saraketta: sisältö / sivupalkki"
+
+#: functions.php:148
+#, fuzzy
+msgctxt "theme layout"
+msgid "2 Columns: Sidebar / Content"
+msgstr "Kaksi saraketta: sivupalkki / sisältö"
+
+#: functions.php:166
 msgctxt "sidebar"
 msgid "Primary"
 msgstr "Sivupalkki"
 
-#: functions.php:133
+#: functions.php:176
 #, fuzzy
 msgctxt "sidebar"
 msgid "Header"
 msgstr "Yläsivupalkki"
 
-#: functions.php:143
+#: functions.php:186
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr "Sivupalkki alhaalla"
 
-#: functions.php:153
+#: functions.php:196
 msgctxt "sidebar"
 msgid "Front Page"
 msgstr "Etusivu"
@@ -592,23 +619,18 @@ msgstr "Etusivu"
 #. Translators: If there are characters in your language that are not
 #. * supported by Open Sans, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:181
+#: functions.php:224
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not
-#. * supported by Nunito, translate this to 'off'. Do not translate
+#. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:187
-msgctxt "Nunito font: on or off"
+#: functions.php:230
+msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
-
-#: functions.php:321
-msgctxt "dash before menu item description"
-msgid "&ndash;"
-msgstr "&ndash;"
 
 #: inc/breadcrumb-trail.php:128
 msgctxt "Breadcrumbs aria label"
@@ -653,22 +675,15 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr "W"
 
-#: inc/customizer.php:95
+#: inc/customizer/front-page.php:38
 msgctxt "position of callout text"
 msgid "Top"
 msgstr "ylhäällä"
 
-#: inc/customizer.php:97
+#: inc/customizer/front-page.php:40
 msgctxt "position of callout text"
 msgid "Bottom"
 msgstr "alhaalla"
-
-#. Translators: Default theme layout option.
-#: inc/functions-layouts.php:50
-#, fuzzy
-msgctxt "theme layout"
-msgid "Default"
-msgstr "Oletus"
 
 #: inc/template-tags.php:49
 msgctxt "Used before publish date."
@@ -705,3 +720,67 @@ msgstr "Sivupalkki"
 msgctxt "Sidebar aria label"
 msgid "Subsidiary Sidebar"
 msgstr "Alapalkin sivupalkki"
+
+#: template-parts/content-link.php:22
+msgctxt "Arrow for link post format in right to left languages"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: template-parts/content-link.php:24
+msgctxt "Arrow for link post format in left to right languages"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#~ msgid "Portfolio in %s"
+#~ msgstr "Portfolio kategoriassa %s"
+
+#~ msgid "Collapse Search"
+#~ msgstr "Piilota haku"
+
+#~ msgid "Expand Header Sidebar"
+#~ msgstr "Näytä otsakkeen sivupalkki"
+
+#~ msgid "Expand Social Menu"
+#~ msgstr "Näytä some-valikko"
+
+#~ msgid "Collapse Social Menu"
+#~ msgstr "Piilota some-valikko"
+
+#~ msgid "%s Callout title"
+#~ msgstr "Callout-otsikko %s"
+
+#~ msgid "Hide testimonials"
+#~ msgstr "Piilota suositukset"
+
+#~ msgid ""
+#~ "Check this if you want to hide testimonials from the Front Page Template."
+#~ msgstr ""
+#~ "Valitse tämä, jos haluta piilottaa suositukset Etusivu-sivupohjassa."
+
+#~ msgid "Testimonials after featured area"
+#~ msgstr "Suositukset \"Featured\"-alueen jälkeen"
+
+#~ msgid "Portfolios"
+#~ msgstr "Portfoliot"
+
+#~ msgid "Portfolio Settings"
+#~ msgstr "Portfolio asetukset"
+
+#~ msgid "Portfolio Page Title"
+#~ msgstr "Portfolio-sivun otsikko"
+
+#~ msgid "Portfolio Page Description"
+#~ msgstr "Portfolio-sivun kuvaus"
+
+#, fuzzy
+#~ msgid "Expand Menu"
+#~ msgstr "Avaa alavalikko"
+
+#~ msgctxt "dash before menu item description"
+#~ msgid "&ndash;"
+#~ msgstr "&ndash;"
+
+#, fuzzy
+#~ msgctxt "theme layout"
+#~ msgid "Default"
+#~ msgstr "Oletus"

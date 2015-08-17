@@ -62,9 +62,10 @@ function chuchadon_setup() {
 
 	/* This theme uses wp_nav_menu() in 3 locations. */
 	register_nav_menus( array( 
-		'top-left'  => _x( 'Top Left', 'nav menu location', 'chuchadon' ),
-		'top-right' => _x( 'Top right', 'nav menu location', 'chuchadon' ),
-		'social'    => _x( 'Social', 'nav menu location', 'chuchadon' )
+		'top-left'      => _x( 'Top Left', 'nav menu location', 'chuchadon' ),
+		'top-right'     => _x( 'Top right', 'nav menu location', 'chuchadon' ),
+		'social'        => _x( 'Social links', 'nav menu location', 'chuchadon' ),
+		'social-footer' => _x( 'Social links in footer', 'nav menu location', 'chuchadon' )
 	) );
 	
 	/*
@@ -81,7 +82,7 @@ function chuchadon_setup() {
 	 */
 	 
 	add_theme_support( 'post-formats', array(
-		'audio', 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery'
+		'audio', 'video', 'link'
 	) );
 	
 	/* Add support for WP title. */
@@ -98,8 +99,8 @@ function chuchadon_setup() {
 	/* Add theme support for responsive videos. */
 	add_theme_support( 'jetpack-responsive-videos' );
 	
-	/* Add theme support for Jetpack Testimonials. */
-	add_theme_support( 'jetpack-testimonial' );
+	/* Add theme support for SportPress Plugin. */
+	add_theme_support( 'sportspress' );
 	
 	/* Add theme support for breadcrumb trail. */
 	add_theme_support( 'breadcrumb-trail' );
@@ -275,14 +276,14 @@ function chuchadon_scripts() {
 	/* Enqueue responsive navigation settings. */
 	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation', 'jquery' ), CHUCHADON_VERSION, true );
 	wp_localize_script( 'chuchadon-settings', 'screenReaderTexts', array(
-		'expandMenu'            => esc_html__( 'Expand Menu', 'chuchadon' ),
-		'collapseMenu'          => esc_html__( 'Collapse Menu', 'chuchadon' ),
-		'expandSearch'          => esc_html__( 'Expand Search', 'chuchadon' ),
-		'collapseSearch'        => esc_html__( 'Collapse Search', 'chuchadon' ),
-		'expandSocialMenu'      => esc_html__( 'Expand Social Menu', 'chuchadon' ),
-		'collapseSocialMenu'    => esc_html__( 'Collapse Social Menu', 'chuchadon' ),
-		'expandHeaderSidebar'   => esc_html__( 'Expand Header Sidebar', 'chuchadon' ),
-		'collapseHeaderSidebar' => esc_html__( 'Collapse Header Sidebar', 'chuchadon' )
+		'expandMenu'            => esc_html__( 'Menu', 'chuchadon' ),
+		'collapseMenu'          => esc_html__( 'Menu', 'chuchadon' ),
+		'expandSearch'          => esc_html__( 'Search', 'chuchadon' ),
+		'collapseSearch'        => esc_html__( 'Search', 'chuchadon' ),
+		'expandSocialMenu'      => esc_html__( 'Social', 'chuchadon' ),
+		'collapseSocialMenu'    => esc_html__( 'Social', 'chuchadon' ),
+		'expandHeaderSidebar'   => esc_html__( 'Info', 'chuchadon' ),
+		'collapseHeaderSidebar' => esc_html__( 'Info', 'chuchadon' )
 	) );
 	
 	/* Enqueue functions. */
@@ -351,26 +352,6 @@ function chuchadon_excerpt_more() {
 add_filter( 'excerpt_more', 'chuchadon_excerpt_more' );
 
 /**
- * Display descriptions in main navigation.
- *
- * @param  string  $item_output The menu item output.
- * @param  WP_Post $item        Menu item object.
- * @param  int     $depth       Depth of the menu.
- * @param  array   $args        wp_nav_menu() arguments.
- * @return string  Menu item with possible description.
- * @since  1.0.0
- */
-function chuchadon_nav_description( $item_output, $item, $depth, $args ) {
-	if ( 'primary' == $args->theme_location && $item->description ) {
-		$extra_class = ( 0 === $depth ) ? ' top-depth' : '';
-		$item_output = str_replace( $args->link_after . '</a>', '<span class="menu-item-description' . $extra_class . '"><span class="menu-item-description-mark">' . ' ' . _x( '&ndash;' , 'dash before menu item description', 'chuchadon' ) . '</span> ' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
-	}
-
-	return $item_output;
-}
-add_filter( 'walker_nav_menu_start_el', 'chuchadon_nav_description', 10, 4 );
-
-/**
  * Add body classes.
  *
  * @param  array  $classes  body classes.
@@ -408,22 +389,6 @@ function chuchadon_extra_layout_classes( $classes ) {
 add_filter( 'body_class', 'chuchadon_extra_layout_classes' );
 
 /**
- * Add infinity sign after aside post format.
- *
- * @param  $content The the_content field
- * @return string   The content with infinity sign
- * @since  1.0.0
- */
-function chuchadon_infinity_after_aside( $content ) {
-	if ( has_post_format( 'aside' ) && !is_singular() ) {
-		$content .= ' <a href="' . get_permalink() . '">&#8734;</a>';
-	}
-	
-	return $content;
-}
-add_filter( 'the_content', 'chuchadon_infinity_after_aside', 9 ); // run before wpautop
-
-/**
  * Callback function for adding editor styles. Use along with the add_editor_style() function.
  *
  * @author  Justin Tadlock, justintadlock.com
@@ -452,6 +417,68 @@ function chuchadon_get_editor_styles() {
 	/* Return the styles. */
 	return $editor_styles;
 }
+
+/**
+ * Add featured image as background image to post navigation elements.
+ *
+ * @author    Twenty Fifteen
+ * @copyright Automattic
+ * @license  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ *
+ * @since 1.0.0
+ * @see wp_add_inline_style()
+ */
+function chuchadon_post_nav_background() {
+	
+	if ( ! is_single() ) {
+		return;
+	}
+	
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	$css      = '';
+	
+	if ( is_attachment() && 'attachment' == $previous->post_type ) {
+		return;
+	}
+	
+	if ( $previous &&  has_post_thumbnail( $previous->ID ) ) {
+		$prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'thumbnail' );
+		$css .= '
+			@media screen and (min-width: 400px) {
+				.post-navigation .nav-previous { background-image: url(' . esc_url( $prevthumb[0] ) . '); }
+				.post-navigation .nav-previous { background-repeat: no-repeat; }
+				.post-navigation .nav-previous { background-position: left top; }
+				.post-navigation .nav-previous a { padding-left: 170px; }
+			}
+		';
+	}
+	
+	if ( $next && has_post_thumbnail( $next->ID ) ) {
+		$nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'thumbnail' );
+		$css .= '
+			@media screen and (min-width: 400px) {
+				.post-navigation .nav-next { background-image: url(' . esc_url( $nextthumb[0] ) . '); }
+				.post-navigation .nav-next { background-repeat: no-repeat; }
+				.post-navigation .nav-next { background-position: right top; }
+				.post-navigation .nav-next a { padding-right: 170px; }
+			}
+		';
+	}
+	
+	if ( $previous &&  has_post_thumbnail( $previous->ID ) || $next && has_post_thumbnail( $next->ID ) ) {
+		$css .= '
+			@media screen and (min-width: 400px) {
+				.post-navigation .nav-previous a, .post-navigation .nav-next a { min-height: 150px; }
+			}
+		';
+	
+	}
+	
+	wp_add_inline_style( 'chuchadon-style', $css );
+	
+}
+add_action( 'wp_enqueue_scripts', 'chuchadon_post_nav_background' );
 
 /**
  * Convert HEX to RGB.

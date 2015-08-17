@@ -70,7 +70,7 @@ function chuchadon_header_style() {
 	
 	/* Site title styles. */
 	if ( display_header_text() ) {
-		$style .= ".site-title, .site-title a, .site-description, .site-description a, .top-callout-content, .top-callout-content a { color: #{$header_color} }";
+		$style .= ".site-title, .site-title a, .site-description, .site-description a, .top-callout-content, .top-callout-content a, .top-callout-content h2, .top-callout-content h3 { color: #{$header_color} }";
 		$style .= ".site-title a, .top-callout-content a { border-color: #{$header_color} }";
 	}
 	

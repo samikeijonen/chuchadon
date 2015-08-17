@@ -63,39 +63,6 @@
 			parentLink[i].insertAdjacentHTML( 'afterend', '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 		}
 		
-		// Add 'sub-menu-*' class to sub menus and height styles for them
-		var submenuContainer = container.querySelectorAll( '.sub-menu' );
-		var styleForSubmenus = [];
-		var head = document.head || document.getElementsByTagName( 'head' )[0];
-		for ( var i = 0, len = submenuContainer.length; i < len; i++ ) {
-			
-			// Add 'sub-menu-*' class
-			submenuContainer[i].classList.add( 'sub-menu-' + [i] );
-			
-			// Calculate height of sub menu
-			var submenuHeights = submenuContainer[i].offsetHeight;
-			
-			// Add inline styles for max-height speed
-			submenuContainer[i].style.transition = "max-height " + 350 + "ms";
-			
-			// Add height styles in array
-			styleForSubmenus.push( ".js .sub-menu-" + [i] + ".toggled { max-height: " + submenuHeights + "px !important; } " );	
-		
-		}
-		
-		// Loop trough height styles and add them to head element
-		for ( var i = 0, len = styleForSubmenus.length; i < len; i++ ) {
-			
-			if ( styleElement.styleSheet ) {
-				styleElement.styleSheet.cssText += styleForSubmenus[i];
-			} else {
-				styleElement.innerHTML += styleForSubmenus[i];
-			}
-			
-			head.appendChild( styleElement );
-			
-		}
-		
 		// Select all dropdown buttons
 		dropdownButton = container.querySelectorAll( '.dropdown-toggle' );
 			
@@ -128,9 +95,7 @@
 					addClass( nextElement, 'toggled' );
 					
 					// Add 'dropdown-active' class to nav when dropdown is toggled
-					if( !hasClass( container, 'dropdown-active' ) ) {
-						addClass( container, 'dropdown-active' );
-					}
+					addClass( container, 'dropdown-active' );
 						
 				} else {
 					
@@ -146,10 +111,8 @@
 					// Remove 'toggled' class from sub-menu element
 					removeClass( nextElement, 'toggled' );
 					
-					// Add 'dropdown-active' class to nav when dropdown is toggled
-					if( hasClass( container, 'dropdown-active' ) ) {
-						removeClass( container, 'dropdown-active' );
-					}
+					// Remove 'dropdown-active' class to nav when dropdown is toggled
+					removeClass( container, 'dropdown-active' );
 					
 				}
 			}, false );

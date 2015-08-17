@@ -11,7 +11,10 @@
 	<?php
 		if ( is_home() && !is_front_page() ) :
 			$chuchadon_archive_title = get_post_field( 'post_title', get_queried_object_id() );
-			$chuchadon_loop_desc     = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
+			/* Support for Subtitles Plugin. */
+			if ( function_exists( 'get_the_subtitle' ) ) :
+				$chuchadon_loop_desc = get_the_subtitle( get_queried_object_id() ); 
+			endif;
 		elseif( is_404() ) :
 			$chuchadon_archive_title = __( 'Oops! That page can&rsquo;t be found.', 'chuchadon' );
 			$chuchadon_loop_desc     = __( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'chuchadon' );

@@ -52,8 +52,7 @@
 			</div><!-- .entry-content -->
 			
 			<footer class="entry-footer">
-				<?php chuchadon_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'chuchadon' ) ) ); ?>
-				<?php chuchadon_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'chuchadon' ), 'before' => '<br />' ) ); ?>
+				<?php chuchadon_post_terms( array( 'taxonomy' => 'post_tag', 'sep' => '', 'text' => __( '<span class="screen-reader-text">Tagged</span> %s', 'chuchadon' ) ) ); ?>
 			</footer><!-- .entry-footer -->
 			
 		<?php endif; // End check for single post ?>

@@ -20,7 +20,7 @@
 
 				<button id="nav-toggle" class="nav-toggle" aria-controls="menu-primary" aria-expanded="false">
 					<span id="nav-toggle-span" class="genericon genericon-menu" aria-hidden="true"></span>
-					<span id="nav-toggle-menu" class="nav-toggle-menu screen-reader-text"><?php esc_html_e( 'Expand Menu', 'chuchadon' ); ?></span>
+					<span id="nav-toggle-menu" class="nav-toggle-menu top-menu-button"><?php esc_html_e( 'Menu', 'chuchadon' ); ?></span>
 				</button>
 			
 			</span><!-- .main-nav-menu-button-wrapper -->
@@ -31,20 +31,20 @@
 		
 			<button id="top-search-form-toggle" class="top-search-form-toggle" aria-controls="top-search-form" aria-expanded="false">
 				<span id="top-search-form-toggle-span" class="genericon genericon-search" aria-hidden="true"></span>
-				<span id="top-search-form-toggle-menu" class="top-search-form-toggle-menu screen-reader-text"><?php esc_html_e( 'Expand Search', 'chuchadon' ); ?></span>
+				<span id="top-search-form-toggle-menu" class="top-search-form-toggle-menu top-menu-button"><?php esc_html_e( 'Search', 'chuchadon' ); ?></span>
 			</button>
 			
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<button id="social-nav-toggle" class="social-nav-toggle" aria-controls="social-navigation-wrapper" aria-expanded="false">
+				<button id="social-nav-toggle" class="social-nav-toggle" aria-controls="menu-social" aria-expanded="false">
 					<span id="social-nav-toggle-span" class="genericon genericon-hierarchy" aria-hidden="true"></span>
-					<span id="social-nav-toggle-menu" class="social-nav-toggle-menu screen-reader-text"><?php esc_html_e( 'Expand Social Menu', 'chuchadon' ); ?></span>
+					<span id="social-nav-toggle-menu" class="social-nav-toggle-menu top-menu-button"><?php esc_html_e( 'Social', 'chuchadon' ); ?></span>
 				</button>
 			<?php endif; ?>
 			
 			<?php if ( is_active_sidebar( 'header' ) ) : ?>
-				<button id="header-sidebar-toggle" class="header-sidebar-toggle" aria-controls="header-sidebar-wrapper" aria-expanded="false">
+				<button id="header-sidebar-toggle" class="header-sidebar-toggle" aria-controls="sidebar-header-wrapper" aria-expanded="false">
 					<span id="header-sidebar-toggle-span" class="genericon genericon-ellipsis" aria-hidden="true"></span>
-					<span id="header-sidebar-toggle-menu" class="header-sidebar-toggle-menu screen-reader-text"><?php esc_html_e( 'Expand Header Sidebar', 'chuchadon' ); ?></span>
+					<span id="header-sidebar-toggle-menu" class="header-sidebar-toggle-menu top-menu-button"><?php esc_html_e( 'Info', 'chuchadon' ); ?></span>
 				</button>
 			<?php endif; ?>
 			

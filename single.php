@@ -15,10 +15,10 @@ get_header(); ?>
 			// Previous/next post navigation.
 			the_post_navigation( array(
 				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'chuchadon' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Next:', 'chuchadon' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Next post:', 'chuchadon' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
 				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'chuchadon' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous:', 'chuchadon' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous post:', 'chuchadon' ) . '</span> ' .
 					'<span class="post-title">%title</span>',
 			) );
 		?>

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chuchadon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2015-08-04 08:20:29+00:00\n"
+"POT-Creation-Date: 2015-08-13 13:29:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,18 +32,21 @@ msgid "Next page"
 msgstr ""
 
 #: archive-jetpack-testimonial.php:50 image.php:38 index.php:37 search.php:30
-#: template-parts/content-audio.php:52
-#: template-parts/content-jetpack-portfolio.php:40
-#: template-parts/content-page.php:32 template-parts/content-video.php:52
-#: template-parts/content.php:48
+#: template-parts/content-audio.php:52 template-parts/content-page.php:32
+#: template-parts/content-video.php:50 template-parts/content.php:48
 msgid "Page"
+msgstr ""
+
+#: area-featured.php:44 area-featured.php:47 area-featured.php:48
+#: inc/customizer/front-page.php:132
+msgid "Articles"
 msgstr ""
 
 #: area-testimonial.php:25 loop-meta.php:27
 msgid "Testimonials"
 msgstr ""
 
-#: comment.php:21
+#: comment.php:26
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -53,6 +56,10 @@ msgstr ""
 
 #: comments.php:63
 msgid "Comments are closed."
+msgstr ""
+
+#: entry-meta.php:13
+msgid "<span class=\"screen-reader-text\">Posted in</span> %s"
 msgstr ""
 
 #: footer.php:34
@@ -83,36 +90,20 @@ msgstr ""
 msgid "A sidebar located in the Front Page Template."
 msgstr ""
 
-#: functions.php:278 menus/menu-buttons.php:23
-msgid "Expand Menu"
+#: functions.php:278 functions.php:279 menus/menu-buttons.php:23
+msgid "Menu"
 msgstr ""
 
-#: functions.php:279
-msgid "Collapse Menu"
+#: functions.php:280 functions.php:281 menus/menu-buttons.php:34
+msgid "Search"
 msgstr ""
 
-#: functions.php:280 menus/menu-buttons.php:34
-msgid "Expand Search"
+#: functions.php:282 functions.php:283 menus/menu-buttons.php:40
+msgid "Social"
 msgstr ""
 
-#: functions.php:281
-msgid "Collapse Search"
-msgstr ""
-
-#: functions.php:282 menus/menu-buttons.php:40
-msgid "Expand Social Menu"
-msgstr ""
-
-#: functions.php:283
-msgid "Collapse Social Menu"
-msgstr ""
-
-#: functions.php:284 menus/menu-buttons.php:47
-msgid "Expand Header Sidebar"
-msgstr ""
-
-#: functions.php:285
-msgid "Collapse Header Sidebar"
+#: functions.php:284 functions.php:285 menus/menu-buttons.php:47
+msgid "Info"
 msgstr ""
 
 #: functions.php:291
@@ -124,11 +115,8 @@ msgid "Collapse child menu"
 msgstr ""
 
 #: functions.php:345 template-parts/content-audio.php:45
-#: template-parts/content-jetpack-portfolio.php:33
-#: template-parts/content-jetpack-testimonial.php:23
-#: template-parts/content-jetpack-testimonial.php:68
 #: template-parts/content-link.php:44 template-parts/content-page.php:25
-#: template-parts/content-video.php:45 template-parts/content.php:41
+#: template-parts/content-video.php:43 template-parts/content.php:41
 #. Translators: The %s is the post title shown to screen readers.
 #. translators: %s: Name of current post
 msgid "Read more %s"
@@ -138,13 +126,12 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:48
+#: header.php:50
 msgid "Breadcrumbs"
 msgstr ""
 
 #: image.php:36 template-parts/content-audio.php:50
-#: template-parts/content-jetpack-portfolio.php:38
-#: template-parts/content-page.php:30 template-parts/content-video.php:50
+#: template-parts/content-page.php:30 template-parts/content-video.php:48
 #: template-parts/content.php:46
 msgid "Pages:"
 msgstr ""
@@ -191,67 +178,127 @@ msgstr ""
 msgid "Default Header Image"
 msgstr ""
 
-#: inc/customizer.php:21
-msgid "Theme Settings"
+#: inc/customizer/background.php:14
+msgid "Background Settings"
 msgstr ""
 
-#: inc/customizer.php:32
-msgid "Layouts"
+#: inc/customizer/background.php:33
+msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:48
-msgid "1 Column"
+#: inc/customizer/background.php:55
+msgid "Header Color Opacity."
 msgstr ""
 
-#: inc/customizer.php:49
-msgid "2 Columns: Content / Sidebar"
+#: inc/customizer/background.php:56
+msgid "Set Header Color opacity."
 msgstr ""
 
-#: inc/customizer.php:50
-msgid "2 Columns: Sidebar / Content"
+#: inc/customizer/background.php:80
+msgid "Callout background"
 msgstr ""
 
-#: inc/customizer.php:57
-msgid "Global Layout"
+#: inc/customizer/background.php:100 inc/customizer/background.php:167
+msgid "Callout Background Color"
 msgstr ""
 
-#: inc/customizer.php:71
+#: inc/customizer/background.php:122
+msgid "Callout Background Color Opacity."
+msgstr ""
+
+#: inc/customizer/background.php:123 inc/customizer/background.php:190
+msgid "Set Callout Background Color Opacity."
+msgstr ""
+
+#: inc/customizer/background.php:147
+msgid "Bottom Callout background"
+msgstr ""
+
+#: inc/customizer/background.php:189
+msgid "Bottom Callout Background Color Opacity."
+msgstr ""
+
+#: inc/customizer/background.php:215
+msgid "Subsidiary sidebar background"
+msgstr ""
+
+#: inc/customizer/background.php:235
+msgid "Subsidiary Sidebar Background Color"
+msgstr ""
+
+#: inc/customizer/background.php:257
+msgid "Subsidiary Sidebar Background Color Opacity."
+msgstr ""
+
+#: inc/customizer/background.php:258
+msgid "Set Subsidiary Sidebar Background Color Opacity."
+msgstr ""
+
+#: inc/customizer/footer.php:14
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer/footer.php:33
+msgid "Hide Footer"
+msgstr ""
+
+#: inc/customizer/footer.php:34
+msgid "Check this if you want to hide Footer content."
+msgstr ""
+
+#: inc/customizer/footer.php:54
+msgid "Footer text"
+msgstr ""
+
+#: inc/customizer/footer.php:55
+msgid "Enter Footer text which replaces default text."
+msgstr ""
+
+#: inc/customizer/front-page.php:14
 msgid "Front Page Settings"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer/front-page.php:15
 msgid ""
 "The first Callout is for top callout section and the second one is for "
 "bottom Callout section."
 msgstr ""
 
-#: inc/customizer.php:112
-msgid "%s Callout title"
-msgstr ""
-
-#: inc/customizer.php:132
+#: inc/customizer/front-page.php:56
 msgid "%s Callout text"
 msgstr ""
 
-#: inc/customizer.php:152
+#: inc/customizer/front-page.php:76
 msgid "%s Callout URL"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer/front-page.php:96
 msgid "%s Callout URL text"
 msgstr ""
 
-#: inc/customizer.php:196
+#: inc/customizer/front-page.php:120
 msgid "Featured area after Sidebar"
 msgstr ""
 
-#: inc/customizer.php:197
+#: inc/customizer/front-page.php:121
 msgid ""
 "Check this if you want to move Featured area after Front Page Sidebar in "
 "the Front Page Template."
 msgstr ""
 
-#: inc/customizer.php:214
+#: inc/customizer/front-page.php:141
+msgid "Featured area title"
+msgstr ""
+
+#: inc/customizer/front-page.php:161
+msgid "Featured area URL"
+msgstr ""
+
+#: inc/customizer/front-page.php:181
+msgid "Featured area URL text"
+msgstr ""
+
+#: inc/customizer/front-page.php:198
 msgid "Blog Posts"
 msgstr ""
 
@@ -259,116 +306,60 @@ msgstr ""
 msgid "Child Pages"
 msgstr ""
 
-#: inc/customizer.php:216
+#: inc/customizer/front-page.php:200
 msgid "Nothing"
 msgstr ""
 
-#: inc/customizer.php:223
+#: inc/customizer/front-page.php:207
 msgid "Featured Content"
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer/front-page.php:208
 msgid ""
 "Select do you want to feature Blog Posts, Child Pages or nothing in Front "
 "Page."
 msgstr ""
 
-#: inc/customizer.php:246
+#: inc/customizer/front-page.php:230
 msgid "Callout Image"
 msgstr ""
 
-#: inc/customizer.php:247
+#: inc/customizer/front-page.php:231
 msgid ""
 "Add Callout Image which can be map or product image for example. "
 "Recommended width is 1920px."
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer/front-page.php:251
 msgid "Callout image alt text"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer/front-page.php:271
 msgid "Callout image URL"
 msgstr ""
 
-#: inc/customizer.php:300
-msgid "Background Settings"
+#: inc/customizer/layout.php:14
+msgid "Layouts"
 msgstr ""
 
-#: inc/customizer.php:319
-msgid "Header Background Color"
+#: inc/customizer/layout.php:30
+msgid "1 Column"
 msgstr ""
 
-#: inc/customizer.php:341
-msgid "Header Color Opacity."
+#: inc/customizer/layout.php:31
+msgid "2 Columns: Content / Sidebar"
 msgstr ""
 
-#: inc/customizer.php:342
-msgid "Set Header Color opacity."
+#: inc/customizer/layout.php:32
+msgid "2 Columns: Sidebar / Content"
 msgstr ""
 
-#: inc/customizer.php:366
-msgid "Callout background"
+#: inc/customizer/layout.php:39
+msgid "Global Layout"
 msgstr ""
 
-#: inc/customizer.php:386
-msgid "Callout Background Color"
-msgstr ""
-
-#: inc/customizer.php:408
-msgid "Callout Background Color Opacity."
-msgstr ""
-
-#: inc/customizer.php:409
-msgid "Set Callout Background Color Opacity."
-msgstr ""
-
-#: inc/customizer.php:434
-msgid "Subsidiary sidebar background"
-msgstr ""
-
-#: inc/customizer.php:454
-msgid "Subsidiary Sidebar Background Color"
-msgstr ""
-
-#: inc/customizer.php:476
-msgid "Subsidiary Sidebar Background Color Opacity."
-msgstr ""
-
-#: inc/customizer.php:477
-msgid "Set Subsidiary Sidebar Background Color Opacity."
-msgstr ""
-
-#: inc/customizer.php:497
-msgid "Portfolio Settings"
-msgstr ""
-
-#: inc/customizer.php:516
-msgid "Portfolio Page Title"
-msgstr ""
-
-#: inc/customizer.php:536
-msgid "Portfolio Page Description"
-msgstr ""
-
-#: inc/customizer.php:551
-msgid "Footer Settings"
-msgstr ""
-
-#: inc/customizer.php:570
-msgid "Hide Footer"
-msgstr ""
-
-#: inc/customizer.php:571
-msgid "Check this if you want to hide Footer content."
-msgstr ""
-
-#: inc/customizer.php:591
-msgid "Footer text"
-msgstr ""
-
-#: inc/customizer.php:592
-msgid "Enter Footer text which replaces default text."
+#: inc/customizer.php:21
+msgid "Theme Settings"
 msgstr ""
 
 #: inc/meta-boxes.php:22
@@ -434,7 +425,7 @@ msgid "Next"
 msgstr ""
 
 #: single.php:18
-msgid "Next:"
+msgid "Next post:"
 msgstr ""
 
 #: single.php:20
@@ -442,24 +433,20 @@ msgid "Previous"
 msgstr ""
 
 #: single.php:21
-msgid "Previous:"
+msgid "Previous post:"
 msgstr ""
 
-#: template-parts/content-aside.php:30 template-parts/content-audio.php:59
-#: template-parts/content-link.php:52 template-parts/content-status.php:32
-#: template-parts/content-video.php:59 template-parts/content.php:55
+#: template-parts/content-audio.php:59 template-parts/content-video.php:57
+#: template-parts/content.php:55
+msgid "<span class=\"screen-reader-text\">Tagged</span> %s"
+msgstr ""
+
+#: template-parts/content-link.php:52
 msgid "Posted in %s"
 msgstr ""
 
-#: template-parts/content-aside.php:31 template-parts/content-audio.php:60
-#: template-parts/content-jetpack-portfolio.php:48
-#: template-parts/content-link.php:53 template-parts/content-status.php:33
-#: template-parts/content-video.php:60 template-parts/content.php:56
+#: template-parts/content-link.php:53
 msgid "Tagged %s"
-msgstr ""
-
-#: template-parts/content-jetpack-portfolio.php:47
-msgid "Portfolio in %s"
 msgstr ""
 
 #: template-parts/content-none.php:16
@@ -511,7 +498,12 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: comment.php:29
+#: area-featured.php:53
+msgctxt "Dash between featured title and link"
+msgid "&ndash;"
+msgstr ""
+
+#: comment.php:19
 msgctxt "%1%s is for comment date"
 msgid "%1$s"
 msgstr ""
@@ -594,11 +586,6 @@ msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:366
-msgctxt "dash before menu item description"
-msgid "&ndash;"
-msgstr ""
-
 #: inc/breadcrumb-trail.php:128
 msgctxt "Breadcrumbs aria label"
 msgid "Breadcrumbs"
@@ -642,12 +629,12 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer/front-page.php:38
 msgctxt "position of callout text"
 msgid "Top"
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer/front-page.php:40
 msgctxt "position of callout text"
 msgid "Bottom"
 msgstr ""
@@ -686,11 +673,6 @@ msgstr ""
 #: sidebar-subsidiary.php:12
 msgctxt "Sidebar aria label"
 msgid "Subsidiary Sidebar"
-msgstr ""
-
-#: template-parts/content-jetpack-testimonial.php:30
-msgctxt "dash before testimonial title"
-msgid "&ndash;"
 msgstr ""
 
 #: template-parts/content-link.php:22
