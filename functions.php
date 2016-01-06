@@ -34,7 +34,7 @@ function chuchadon_setup() {
 	*/
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$content_width = 1260; /* pixels */
+		$content_width = 1200; /* pixels */
 	}
 
 	/*
@@ -54,10 +54,10 @@ function chuchadon_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 800, 450, true );
+	set_post_thumbnail_size( 1200, 675, true );
 	
 	/* Add custom image sizes. */
-	add_image_size( 'chuchadon-site-logo', 30, 30, true );
+	add_image_size( 'chuchadon-site-logo', 30, 9999, false );
 	add_image_size( 'chuchadon-testimonial', 140, 140, true );
 
 	/* This theme uses wp_nav_menu() in 3 locations. */
@@ -274,23 +274,18 @@ function chuchadon_scripts() {
 	wp_enqueue_script( 'chuchadon-navigation', get_template_directory_uri() . '/js/responsive-nav' . CHUCHADON_SUFFIX . '.js', array(), CHUCHADON_VERSION, true );
 	
 	/* Enqueue responsive navigation settings. */
-	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation', 'jquery' ), CHUCHADON_VERSION, true );
+	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/functions' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation' ), CHUCHADON_VERSION, true );
 	wp_localize_script( 'chuchadon-settings', 'screenReaderTexts', array(
 		'expandMenu'            => esc_html__( 'Menu', 'chuchadon' ),
 		'collapseMenu'          => esc_html__( 'Menu', 'chuchadon' ),
+		'expandSubMenu'         => '<span class="screen-reader-text">' . esc_html__( 'Open child menu', 'chuchadon' ) . '</span>',
+		'collapseSubMenu'       => '<span class="screen-reader-text">' . esc_html__( 'Close child menu', 'chuchadon' ) . '</span>',
 		'expandSearch'          => esc_html__( 'Search', 'chuchadon' ),
 		'collapseSearch'        => esc_html__( 'Search', 'chuchadon' ),
 		'expandSocialMenu'      => esc_html__( 'Social', 'chuchadon' ),
 		'collapseSocialMenu'    => esc_html__( 'Social', 'chuchadon' ),
 		'expandHeaderSidebar'   => esc_html__( 'Info', 'chuchadon' ),
 		'collapseHeaderSidebar' => esc_html__( 'Info', 'chuchadon' )
-	) );
-	
-	/* Enqueue functions. */
-	wp_enqueue_script( 'chuchadon-script', get_template_directory_uri() . '/js/functions' . CHUCHADON_SUFFIX . '.js', array(), CHUCHADON_VERSION, true );
-	wp_localize_script( 'chuchadon-script', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . __( 'Expand child menu', 'chuchadon' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . __( 'Collapse child menu', 'chuchadon' ) . '</span>',
 	) );
 	
 	/* Enqueue comment reply. */
@@ -625,3 +620,8 @@ require_once( get_template_directory() . '/inc/media-grabber.php' );
  * Load meta boxes.
  */
 require_once( get_template_directory() . '/inc/meta-boxes.php' );
+
+/**
+ * Load filters.
+ */
+require_once( get_template_directory() . '/inc/functions-filters.php' );

@@ -73,7 +73,7 @@
 				
 				<?php if( is_page_template( 'pages/front-page.php' ) && '' != trim( get_post_field( 'post_content', get_the_ID() ) ) ) : // Content for front page template in the header. ?>
 					<div id="top-callout-content" class="top-callout-content clear">
-						<?php echo apply_filters( 'the_content', ( get_post_field( 'post_content', get_the_ID() ) ) ); ?>
+						<?php echo wp_kses_post( apply_filters( 'chuchadon_the_content', ( get_post_field( 'post_content', get_the_ID() ) ) ) ); ?>
 					</div>
 				<?php endif; ?>
 					

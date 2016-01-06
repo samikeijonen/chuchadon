@@ -4,142 +4,174 @@
  */
 ( function() {
 	var container,
-	menu,
-	menuRight,
-	menuTop,
-	links,
-	linksTop,
-	dropdownButton,
-	styleElement = document.createElement( 'style' );
-
+	menuRight;
+	
+	// Main nagivation
 	container = document.getElementById( 'menu-primary' );
 
-	/**
-	 * Make dropdown menus keyboard accessible.
-	 */
-	 
 	if ( container ) {
 		
-		// Top Left Menu
-		menu = document.getElementById( 'top-left-items' );
-		
-		// Top Right menu
-		menuRight = document.getElementById( 'top-right-items' );
-
-		// Get all the link elements within the left menu.
-		links    = menu.getElementsByTagName( 'a' );
-		subMenus = menu.getElementsByTagName( 'ul' );
-		
-		// Get all the link elements within the right menu.
-		linksRight = menuRight.getElementsByTagName( 'a' );
-		subMenusRight = menuRight.getElementsByTagName( 'ul' );
-
-		// Each time a menu link is focused or blurred call the function toggleFocus.
-		for ( var i = 0, len = links.length; i < len; i++ ) {
-			links[i].onfocus = toggleFocus;
-			links[i].onblur = toggleFocus;
-		}
-		
-		// Same for right menu
-		for ( var i = 0, len = linksRight.length; i < len; i++ ) {
-			linksRight[i].onfocus = toggleFocus;
-			linksRight[i].onblur = toggleFocus;
-		}
-		
-		// Set menu items with submenus to aria-haspopup="true".
-		for ( var i = 0, len = subMenus.length; i < len; i++ ) {
-			subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
-		}
-		
-		// Set menu items with submenus to aria-haspopup="true" for right menu.
-		for ( var i = 0, len = subMenusRight.length; i < len; i++ ) {
-			subMenusRight[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
-		}
-		
-		// Add button after link when there is submenu around.
-		var parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-		
-		for ( var i = 0; i < parentLink.length; ++i ) {
-			parentLink[i].insertAdjacentHTML( 'afterend', '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
-		}
-		
-		// Select all dropdown buttons
-		dropdownButton = container.querySelectorAll( '.dropdown-toggle' );
-			
-		// For each dropdown Button element add click event
-		[].forEach.call( dropdownButton, function( el ) {
-
-			// Add click event listener
-			el.addEventListener( "click", function( event ) {
-				
-				// Change dropdown button text on every click
-				if( this.innerHTML === screenReaderText.expand ) {
-					this.innerHTML = screenReaderText.collapse;
-				} else {
-					this.innerHTML = screenReaderText.expand;
-				}
-				
-				// Toggle dropdown button
-				if( !hasClass( this, 'toggled' ) ) {
-					
-					// Add .toggled class
-					addClass( this, 'toggled' );
-					
-					// Set aria-expanded to true
-					this.setAttribute( 'aria-expanded', 'true' );
-					
-					// Get next element meaning UL with .sub-menu class
-					var nextElement = this.nextElementSibling;
-					
-					// Add 'toggled' class to sub-menu element
-					addClass( nextElement, 'toggled' );
-					
-					// Add 'dropdown-active' class to nav when dropdown is toggled
-					addClass( container, 'dropdown-active' );
-						
-				} else {
-					
-					// Remove .toggled class
-					removeClass( this, 'toggled' );
-					
-					// Set aria-expanded to false
-					this.setAttribute( 'aria-expanded', 'false' );
-					
-					// Get next element meaning UL with .sub-menu
-					var nextElement = this.nextElementSibling;
-					
-					// Remove 'toggled' class from sub-menu element
-					removeClass( nextElement, 'toggled' );
-					
-					// Remove 'dropdown-active' class to nav when dropdown is toggled
-					removeClass( container, 'dropdown-active' );
-					
-				}
-			}, false );
-
+		var buttonMain = document.getElementById( 'nav-toggle' );
+		var buttonMainSpan = document.getElementById( 'nav-toggle-span' );
+		var buttonMainMenu = document.getElementById( 'nav-toggle-menu' );
+		var navMain = responsiveNav( ".main-navigation", {    // Selector
+			transition: 350,                                  // Integer: Speed of the transition, in milliseconds
+			customToggle: "#nav-toggle",                      // Selector: Specify the ID of a custom toggle
+			enableFocus: true,                                // Boolean: Do we use use 'focus' class in our nav elements
+			enableDropdown: true,                             // Boolean: Do we use multi level dropdown
+			dropDown: "menu-item-has-children",               // String: Class that is added to link element that have sub menu
+			openDropdown: screenReaderTexts.expandSubMenu,    // String: Label for opening sub menu
+			closeDropdown: screenReaderTexts.collapseSubMenu, // String: Label for closing sub menu
+			init: function () {                               // Set ARIA for menu toggle button
+				buttonMain.setAttribute( 'aria-expanded', 'false' );
+				buttonMain.setAttribute( 'aria-pressed', 'false' );
+				buttonMain.setAttribute( 'aria-controls', 'menu-primary' );
+			},
+			open: function () {
+				buttonMain.setAttribute( 'aria-expanded', 'true' );
+				buttonMain.setAttribute( 'aria-pressed', 'true' );
+				buttonMainSpan.setAttribute( 'class', 'genericon genericon-close' );
+				buttonMainMenu.innerHTML = screenReaderTexts.collapseMenu;
+			},
+			close: function () {
+				buttonMain.setAttribute( 'aria-expanded', 'false' );
+				buttonMain.setAttribute( 'aria-pressed', 'false' );
+				buttonMainSpan.setAttribute( 'class', 'genericon genericon-menu' );
+				buttonMainMenu.innerHTML = screenReaderTexts.expandMenu;
+			},
 		});
 		
-	}
-
-	function toggleFocus() {
-		var current = this,
-		    ancestors = [];
-
-		// Create an array of <li> ancestors of the current link. Stop upon
-		// reaching .menu-items at the top of the current menu system.
-		while ( -1 === current.className.indexOf( 'menu-items' ) ) {
-			if ( 'li' === current.tagName.toLowerCase() ) {
-				ancestors.unshift( current );
+		// Top Right menu. We need to add .focus to this separately.
+		menuRight = document.getElementById( 'top-right-items' );
+		
+		if ( menuRight ) {
+			
+			// Get all the link elements within the right menu.
+			linksRight = menuRight.getElementsByTagName( 'a' );
+			subMenusRight = menuRight.getElementsByTagName( 'ul' );
+		
+			// Each time a menu link is focused or blurred call the function toggleFocusRight.
+			for ( var i = 0, len = linksRight.length; i < len; i++ ) {
+				linksRight[i].addEventListener( 'focus', toggleFocusRight, true );
+				linksRight[i].addEventListener( 'blur', toggleFocusRight, true );
 			}
-			current = current.parentElement;
+		
+			// Set menu items with submenus to aria-haspopup="true" for right menu.
+			for ( var i = 0, len = subMenusRight.length; i < len; i++ ) {
+				subMenusRight[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
+			}
+			
 		}
+		
+	}
+	
+	// Top search form
+	if ( document.getElementById( 'top-search-form' ) ) {
+		var buttonSearch     = document.getElementById( 'top-search-form-toggle' );
+		var buttonSearchSpan = document.getElementById( 'top-search-form-toggle-span' );
+		var buttonSearchMenu = document.getElementById( 'top-search-form-toggle-menu' );
+		var navSearch        = responsiveNav( ".top-search-form", { // Selector
+			transition: 350,                         // Integer: Speed of the transition, in milliseconds
+			customToggle: "#top-search-form-toggle", // Selector: Specify the ID of a custom toggle
+			init: function () {                      // Set ARIA for menu toggle button
+				buttonSearch.setAttribute( 'aria-expanded', 'false' );
+				buttonSearch.setAttribute( 'aria-pressed', 'false' );
+			},
+			open: function () {
+				buttonSearch.setAttribute( 'aria-expanded', 'true' );
+				buttonSearch.setAttribute( 'aria-pressed', 'true' );
+				buttonSearchSpan.setAttribute( 'class', 'genericon genericon-close' );
+				buttonSearchMenu.innerHTML = screenReaderTexts.collapseSearch;
+				navSocial.close();
+				navHeader.close();
+			},
+			close: function () {
+				buttonSearch.setAttribute( 'aria-expanded', 'false' );
+				buttonSearch.setAttribute( 'aria-pressed', 'false' );
+				buttonSearchSpan.setAttribute( 'class', 'genericon genericon-search' );
+				buttonSearchMenu.innerHTML = screenReaderTexts.expandSearch;
+			},
+		});
+	}
+	
+	// Social menu
+	if ( document.getElementById( 'menu-social' ) ) {
+		var buttonSocial     = document.getElementById( 'social-nav-toggle' );
+		var buttonSocialSpan = document.getElementById( 'social-nav-toggle-span' );
+		var buttonSocialMenu = document.getElementById( 'social-nav-toggle-menu' );
+		var navSocial        = responsiveNav( ".social-navigation", { // Selector
+			transition: 350,                    // Integer: Speed of the transition, in milliseconds
+			customToggle: "#social-nav-toggle", // Selector: Specify the ID of a custom toggle
+			init: function () {                 // Set ARIA for menu toggle button
+				buttonSocial.setAttribute( 'aria-expanded', 'false' );
+				buttonSocial.setAttribute( 'aria-pressed', 'false' );
+			},
+			open: function () {
+				buttonSocial.setAttribute( 'aria-expanded', 'true' );
+				buttonSocial.setAttribute( 'aria-pressed', 'true' );
+				buttonSocialSpan.setAttribute( 'class', 'genericon genericon-close' );
+				buttonSocialMenu.innerHTML = screenReaderTexts.collapseSocialMenu;
+				navSearch.close();
+				navHeader.close();
+			},
+			close: function () {
+				buttonSocial.setAttribute( 'aria-expanded', 'false' );
+				buttonSocial.setAttribute( 'aria-pressed', 'false' );
+				buttonSocialSpan.setAttribute( 'class', 'genericon genericon-hierarchy' );
+				buttonSocialMenu.innerHTML = screenReaderTexts.expandSocialMenu;
+			},
+		});
+	}
+	
+	// Header sidebar
+	if ( document.getElementById( 'sidebar-header-wrapper' ) ) {
+		var buttonHeader     = document.getElementById( 'header-sidebar-toggle' );
+		var buttonHeaderSpan = document.getElementById( 'header-sidebar-toggle-span' );
+		var buttonHeaderMenu = document.getElementById( 'header-sidebar-toggle-menu' );
+		var navHeader        = responsiveNav( ".sidebar-header-wrapper", { // Selector
+			transition: 350,                        // Integer: Speed of the transition, in milliseconds
+			customToggle: "#header-sidebar-toggle", // Selector: Specify the ID of a custom toggle
+			init: function () {                     // Set ARIA for menu toggle button
+				buttonHeader.setAttribute( 'aria-expanded', 'false' );
+				buttonHeader.setAttribute( 'aria-pressed', 'false' );
+			},
+			open: function () {
+				buttonHeader.setAttribute( 'aria-expanded', 'true' );
+				buttonHeader.setAttribute( 'aria-pressed', 'true' );
+				buttonHeaderSpan.setAttribute( 'class', 'genericon genericon-close' );
+				buttonHeaderMenu.innerHTML = screenReaderTexts.collapseHeaderSidebar;
+				navSearch.close();
+				navSocial.close();
+			},
+			close: function () {
+				buttonHeader.setAttribute( 'aria-expanded', 'false' );
+				buttonHeader.setAttribute( 'aria-pressed', 'false' );
+				buttonHeaderSpan.setAttribute( 'class', 'genericon genericon-ellipsis' );
+				buttonHeaderMenu.innerHTML = screenReaderTexts.expandHeaderSidebar;
+				window.scrollTo( 0, 0 );
+			},
+		});
+	}
+	 
+	/**
+	 * Sets or removes .focus class on an element. We need to do this for top right menu separately.
+	 */
+	function toggleFocusRight() {
+		var self = this;
 
-		// For each element in ancestors[] toggle the class .focus.
-		for ( i = 0, len = ancestors.length; i < len; i++ ) {
-			if ( -1 !== ancestors[i].className.indexOf( 'focus' ) )
-				ancestors[i].className = ancestors[i].className.replace( ' focus', '' );
-			else
-				ancestors[i].className += ' focus';
+		// Move up through the ancestors of the current link until we hit .menu-items-right. That's the top right menu where we need to do this separately.
+		while ( -1 === self.className.indexOf( 'menu-items-right' ) ) {
+
+			// On li elements toggle the class .focus.
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+					self.className = self.className.replace( ' focus', '' );
+				} else {
+					self.className += ' focus';
+				}
+			}
+
+			self = self.parentElement;
 		}
 	}
 	
@@ -176,93 +208,6 @@
 		fixMenuTouchTaps( container );
 	}
 	
-	/**
-	* Adds a class to any element
-	*
-	* @param {element} element
-	* @param {string}  class
-	*/
-	addClass = function (el, cls) {
-		if (el.className.indexOf(cls) !== 0) {
-			el.className += " " + cls;
-			el.className = el.className.replace(/(^\s*)|(\s*$)/g,"");
-		}
-	}
-    
-	/**
-	* Remove a class from any element
-	*
-	* @param  {element} element
-	* @param  {string}  class
-	*/
-	removeClass = function (el, cls) {
-		var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
-		el.className = el.className.replace(reg, " ").replace(/(^\s*)|(\s*$)/g,"");
-	}
-	
-	hasClass = function (elem, className) {
-		return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-	}
-	
-	/**
-	* forEach method that passes back the stuff we need
-	*
-	* @param  {array}    array
-	* @param  {Function} callback
-	* @param  {scope}    scope
-	*/
-	forEach = function (array, callback, scope) {
-		for (var i = 0; i < array.length; i++) {
-			callback.call(scope, i, array[i]);
-		}
-	};
-	
-	/**
-	 * Get the children of any element
-	 *
-	 * @param  {element}
-	 * @return {array} Returns matching elements in an array
-	 */
-	getChildren = function ( e ) {
-		if ( e.children.length < 1 ) {
-			throw new Error( "The Nav container has no containing elements" );
-		}
-		// Store all children in array
-		var children = [];
-		// Loop through children and store in array if child != TextNode
-		for ( var i = 0; i < e.children.length; i++ ) {
-			if ( e.children[i].nodeType === 1 ) {
-				children.push( e.children[i] );
-			}
-		}
-		return children;
-	}
-	
-	/**
-	 * Calculates the height of the navigation and then creates
-	 * styles which are later added to the page <head>
-	 */
-	calcSubmenuHeight = function ( elem ) {
-		var submenuHeight = 0;
-		for ( var i = 0; i < elem.inner.length; i++ ) {
-			submenuHeight += elem.inner[i].offsetHeight;
-		}
-		return submenuHeight;
-	}
-	
-	/**
-	 * Adds the needed CSS transitions if animations are enabled
-	 */
-	transitionsSubmenu = function ( elem ) {
-		var objStyle = elem.style,
-		transitionSubmenu = "max-height " + elem.offsetHeight + "px";
-
-		objStyle.WebkitTransition = transitionSubmenu;
-		objStyle.MozTransition = transitionSubmenu;
-		objStyle.OTransition = transitionSubmenu;
-		objStyle.transition = transitionSubmenu;
-	}
-	
 } )();
 
 /**
@@ -285,4 +230,4 @@
 			}
 		}, false );
 	}
-})();
+} )();

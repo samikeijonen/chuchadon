@@ -43,10 +43,12 @@
 					) );
 				
 					wp_link_pages( array(
-						'before'    => '<div class="page-links">' . __( 'Pages:', 'chuchadon' ),
-						'after'     => '</div>',
-						'pagelink'  => '<span class="screen-reader-text">' . __( 'Page', 'chuchadon' ) . ' </span>%',
-						'separator' => '<span class="screen-reader-text">,</span> ',
+						'before'      => '<div class="page-links">' . __( 'Pages:', 'chuchadon' ),
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+						'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'chuchadon' ) . ' </span>%',
+						'separator'   => '<span class="screen-reader-text">,</span> ',
 					) );
 				?>
 			</div><!-- .entry-content -->

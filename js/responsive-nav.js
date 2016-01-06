@@ -177,6 +177,41 @@
         for (var i = 0; i < array.length; i++) {
           callback.call(scope, i, array[i]);
         }
+      },
+	  
+      /**
+       * Checks if an element has certain class
+       *
+       * @param  {element}  element
+       * @param  {string}   class name
+       * @return {Boolean}
+       */
+      hasClass = function (el, cls) {
+        return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+      },
+	  
+      /**
+       * Sets or removes .focus class on an element.
+       */
+      toggleFocus = function () {
+        var self = this,
+		menuItems = opts.menuItems;
+
+        // Move up through the ancestors of the current link until we hit 'menu-items' class. That's top level ul-element class name.
+        while ( -1 === self.className.indexOf( menuItems ) ) {
+
+          // On li elements toggle the class .focus.
+          if ( 'li' === self.tagName.toLowerCase() ) {
+            if ( -1 !== self.className.indexOf( 'focus' ) ) {
+              self.className = self.className.replace( ' focus', '' );
+            } else {
+              self.className += ' focus';
+            }
+          }
+
+          self = self.parentElement;
+        }
+		
       };
 
     var nav,
@@ -206,6 +241,13 @@
           navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
           navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
           jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+          enableFocus: false,               // Boolean: Do we add 'focus' class in nav elements
+		  enableDropdown: false,            // Boolean: Do we use multi level dropdown
+		  menuItems: "menu-items",          // String: Class that is added only to top ul element
+          subMenu: "sub-menu",              // String: Class that is added to sub menu ul elements
+          dropDown: "dropdown",             // String: Class that is added to link element that have sub menu
+          openDropdown: "Open sub menu",    // String: Label for opening sub menu
+          closeDropdown: "Close sub menu",  // String: Label for closing sub menu
           init: function(){},               // Function: Init callback
           open: function(){},               // Function: Open callback
           close: function(){}               // Function: Close callback
@@ -414,6 +456,10 @@
         this._createToggle();
         this._transitions();
         this.resize();
+		
+		// Enable more accessible dropdown menu
+		this._createFocus();
+		this._createMultiLevel();
 
         /**
          * On IE8 the resize event triggers too early for some reason
@@ -643,6 +689,118 @@
         }
 
         innerStyles = "";
+      },
+	  
+      /**
+       * Adds aria-haspopup and creates .focus class on nav elements
+       */
+      _createFocus: function () {
+		  
+	    if(!opts.enableFocus) {
+		  return;
+		}
+		  
+        // Get all the link elements within the menu.
+        var menu = nav.getElementsByTagName( 'ul' )[0],
+        links = menu.getElementsByTagName( 'a' ),
+		len,
+		i;
+		  
+        // Each time a menu link is focused or blurred, toggle focus.
+        for ( i = 0, len = links.length; i < len; i++ ) {
+          links[i].addEventListener( 'focus', toggleFocus, true );
+          links[i].addEventListener( 'blur', toggleFocus, true );
+        }
+	   
+	  },
+	  
+      /**
+       * Enable multi-level dropdown
+       */
+      _createMultiLevel: function () {
+		  
+        // Bail if multiple level dropdown is not enabled.
+        if(!opts.enableDropdown) {
+          return;	
+        }
+		  
+		// Get submenus
+		var menu = nav.getElementsByTagName( 'ul' )[0],
+        subMenus = menu.getElementsByTagName( 'ul' ),
+        parentLink = nav.querySelectorAll( '.' + opts.dropDown + ' > a' ),
+        i,
+        len;
+		
+       // Add .multiple-level-nav class to nav
+       addClass( nav, 'multiple-level-nav' );
+		
+       // Set menu items with submenus to aria-haspopup="true".
+       for ( i = 0, len = subMenus.length; i < len; i++ ) {
+         subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
+       }
+		
+       // Add button after link when there is submenu around.
+       for ( i = 0; i < parentLink.length; ++i ) {
+         parentLink[i].insertAdjacentHTML( 'afterend', '<button class="dropdown-toggle" aria-expanded="false">' + opts.openDropdown + '</button>' );
+       }
+		
+       // Select all dropdown buttons
+       var dropdownButton = nav.querySelectorAll( '.dropdown-toggle' );
+		
+       // For each dropdown Button element add click event
+       forEach( dropdownButton, function( i, el ) {
+
+         // Add click event listener
+         el.addEventListener( "click", function( event ) {
+			
+           // Change dropdown button text on every click
+           if( this.innerHTML === opts.openDropdown ) {
+             this.innerHTML = opts.closeDropdown;
+           } else {
+             this.innerHTML = opts.openDropdown;
+           }
+				
+           // Toggle dropdown button
+           if( !hasClass( this, 'toggled' ) ) {
+					
+             // Add .toggled class
+             addClass( this, 'toggled' );
+					
+             // Set aria-expanded to true
+             this.setAttribute( 'aria-expanded', 'true' );
+					
+             // Get next element meaning UL with .sub-menu class
+             var nextElement = this.nextElementSibling;
+					
+             // Add 'toggled' class to sub-menu element
+             addClass( nextElement, 'toggled' );
+					
+             // Add 'dropdown-active' class to nav when dropdown is toggled
+             addClass( nav, 'dropdown-active' );
+						
+           } else {
+					
+             // Remove .toggled class
+             removeClass( this, 'toggled' );
+					
+             // Set aria-expanded to false
+             this.setAttribute( 'aria-expanded', 'false' );
+					
+             // Get next element meaning UL with .sub-menu
+             var nextElement = this.nextElementSibling;
+					
+             // Remove 'toggled' class from sub-menu element
+             removeClass( nextElement, 'toggled' );
+					
+             // Remove 'dropdown-active' class to nav when dropdown is toggled
+             removeClass( nav, 'dropdown-active' );
+					
+           }
+				
+         }, false );
+
+       });
+	
       }
 
     };

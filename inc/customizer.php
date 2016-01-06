@@ -42,21 +42,21 @@ function chuchadon_color_backgrounds_css() {
 	
 	/* Get header colors. */
 	$header_bg_color = get_theme_mod( 'header_background_color', apply_filters( 'chuchadon_default_bg_color', '#cc0000' ) );
-	$header_bg_color_opacity = absint( get_theme_mod( 'header_background_color_opacity', absint( apply_filters( 'chuchadon_default_bg_opacity', 75 ) ) ) );
+	$header_bg_color_opacity = absint( get_theme_mod( 'header_background_color_opacity', absint( apply_filters( 'chuchadon_default_bg_opacity', 78 ) ) ) );
 	$header_bg_color_opacity = $header_bg_color_opacity / 100;
 	
 	/* Get Callout colors. */
 	$callout_bg_color = get_theme_mod( 'callout_bg_color', apply_filters( 'chuchadon_default_callout_bg_color', '#000000' ) );
-	$callout_bg_color_opacity = absint( get_theme_mod( 'callout_bg_color_opacity', absint( apply_filters( 'chuchadon_default_callout_bg_opacity', 75 ) ) ) );
+	$callout_bg_color_opacity = absint( get_theme_mod( 'callout_bg_color_opacity', absint( apply_filters( 'chuchadon_default_callout_bg_opacity', 78 ) ) ) );
 	$callout_bg_color_opacity = $callout_bg_color_opacity / 100;
 	
 	$callout_bg_bottom_color = get_theme_mod( 'callout_bg_bottom_color', apply_filters( 'chuchadon_default_callout_bg_bottom_color', '#cc0000' ) );
-	$callout_bg_bottom_color_opacity = absint( get_theme_mod( 'callout_bg_bottom_color_opacity', absint( apply_filters( 'chuchadon_default_callout_bg_bottom_opacity', 75 ) ) ) );
+	$callout_bg_bottom_color_opacity = absint( get_theme_mod( 'callout_bg_bottom_color_opacity', absint( apply_filters( 'chuchadon_default_callout_bg_bottom_opacity', 78 ) ) ) );
 	$callout_bg_bottom_color_opacity = $callout_bg_bottom_color_opacity / 100;
 	
 	/* Get subsidiary sidebar colors. */
 	$subsidiary_sidebar_bg_color = get_theme_mod( 'subsidiary_sidebar_bg_color', apply_filters( 'chuchadon_default_sidebar_bg_color', '#000000' ) );
-	$subsidiary_sidebar_bg_color_opacity = absint( get_theme_mod( 'subsidiary_sidebar_bg_color_opacity', absint( apply_filters( 'chuchadon_default_subsidiary_sidebar_bg_opacity', 85 ) ) ) );
+	$subsidiary_sidebar_bg_color_opacity = absint( get_theme_mod( 'subsidiary_sidebar_bg_color_opacity', absint( apply_filters( 'chuchadon_default_subsidiary_sidebar_bg_opacity', 78 ) ) ) );
 	$subsidiary_sidebar_bg_color_opacity = $subsidiary_sidebar_bg_color_opacity / 100;
 
 	/* Convert hex color to rgba. */
@@ -77,7 +77,7 @@ function chuchadon_color_backgrounds_css() {
 	$min_width_callout_bottom = absint( apply_filters( 'chuchadon_callout_bg_bottom_show', 800 ) );
 	
 	/* When to show subsidiary sidebar image. */
-	$min_width = absint( apply_filters( 'chuchadon_subsidiary_sidebar_bg_show', 1 ) );
+	$min_width = absint( apply_filters( 'chuchadon_subsidiary_sidebar_bg_show', 800 ) );
 	
 	/* Background arguments for Callout. */
 	$background_arguments_callout        = esc_attr( apply_filters( 'chuchadon_callout_bg_arguments', 'no-repeat right top' ) );
@@ -274,7 +274,7 @@ function chuchadon_callout_output( $placement ) {
 		
 		/* Callout text. */
 		if( get_theme_mod( 'callout_text_' . $placement ) ) {
-			$output .= '<div class="chuchadon-callout-text">' . apply_filters( 'the_content', esc_html( get_theme_mod( 'callout_text_' . $placement ) ) ) . '</div>';
+			$output .= '<div class="chuchadon-callout-text">' . apply_filters( 'chuchadon_the_content', wp_kses_post( get_theme_mod( 'callout_text_' . $placement ) ) ) . '</div>';
 		}
 		
 		/* Callout link. */

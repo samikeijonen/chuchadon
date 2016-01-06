@@ -161,12 +161,19 @@ if ( ! function_exists( 'chuchadon_post_thumbnail' ) ) :
  * @since 1.0.0
  */
 function chuchadon_post_thumbnail() {
-	if ( post_password_required() || is_attachment() ) {
+	
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
+	if ( is_singular() && !is_page_template( 'pages/front-page.php' ) && !is_page_template( 'pages/child-pages.php' ) ) :
+	?>
 
-	if ( has_post_thumbnail() && !is_singular() || is_page_template( 'pages/front-page.php' ) || is_page_template( 'pages/child-pages.php' ) ) : ?>
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div><!-- .post-thumbnail -->
 
+	<?php else : ?>
+		
 		<div class="entry-image">
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 				<?php
@@ -174,8 +181,9 @@ function chuchadon_post_thumbnail() {
 				?>
 			</a>
 		</div><!-- .entry-image -->
-		
+
 	<?php endif; // End is_singular()
+	
 }
 endif;
 

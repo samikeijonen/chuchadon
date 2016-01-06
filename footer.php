@@ -31,7 +31,7 @@
 			
 				<?php
 					if( get_theme_mod( 'footer_text' ) ) :
-						echo get_theme_mod( 'footer_text' );
+						echo wp_kses_post( get_theme_mod( 'footer_text' ) );
 					else :
 				?>
 				

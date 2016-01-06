@@ -27,7 +27,7 @@ function chuchadon_custom_header_setup() {
 				'url'           => '%s/images/header-image.jpg',
 				'thumbnail_url' => '%s/images/header-image.jpg',
 				/* Translators: Header image description. */
-				'description'   => __( 'Default Header Image', 'chuchadon' )
+				'description'   => esc_html__( 'Default Header Image', 'chuchadon' )
 			)
 		)
 	);
@@ -61,7 +61,6 @@ function chuchadon_header_style() {
 	/* When to show header image. */
 	$min_width = absint( apply_filters( 'chuchadon_header_bg_show', 800 ) );
 	
-	/* Background arguments. */
 	$background_arguments = esc_attr( apply_filters( 'chuchadon_header_bg_arguments', 'no-repeat' ) );
 	
 	if ( ! empty( $header_image ) ) {

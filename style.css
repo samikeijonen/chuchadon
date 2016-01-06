@@ -1377,7 +1377,7 @@ a.chuchadon-button {
 
 .menu-social li a[href*="codepen.io"]::before,
 .menu-social li a[href*="digg.com"]::before,
-.menu-social li a[href*="dri9f9f9fle.com"]::before,
+.menu-social li a[href*="dribbble.com"]::before,
 .menu-social li a[href*="facebook.com"]::before,
 .menu-social li a[href*="flickr.com"]::before,
 .menu-social li a[href*="plus.google.com"]::before,
@@ -1960,7 +1960,8 @@ body input[type="search"] {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-.page-links a {
+.page-links a,
+.page-links > span {
 	display: inline-block;
 	margin-bottom: 4px;
 	padding: 0.5em 1em;
@@ -2200,7 +2201,7 @@ body #infinite-handle,
 .chuchadon-callout-text {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1260px;
+	max-width: 1200px;
 }
 
 .site-content {

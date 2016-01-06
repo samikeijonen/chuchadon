@@ -5,6 +5,7 @@
 			 * @package Chuchadon
 			 */
 
+				/* Get what we want to show on front page. */
 				$chuchadon_featured_area = get_theme_mod( 'front_page_featured', 'blog-posts' );
 				
 				/* Bail if we do not want to show anything. */

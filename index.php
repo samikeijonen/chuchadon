@@ -32,9 +32,9 @@ get_header(); ?>
 			
 		<?php
 			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'chuchadon' ),
-				'next_text'          => __( 'Next page', 'chuchadon' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'chuchadon' ) . ' </span>',
+				'prev_text'          => esc_html__( 'Previous page', 'chuchadon' ),
+				'next_text'          => esc_html__( 'Next page', 'chuchadon' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'chuchadon' ) . ' </span>',
 			) );
 		?>
 
