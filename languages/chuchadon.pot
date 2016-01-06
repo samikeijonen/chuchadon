@@ -1,14 +1,14 @@
-# Copyright (C) 2015 Sami Keijonen
+# Copyright (C) 2016 Sami Keijonen
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Chuchadon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2015-08-17 13:36:57+00:00\n"
+"POT-Creation-Date: 2016-01-06 17:49:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.0\n"
@@ -32,12 +32,12 @@ msgid "Next page"
 msgstr ""
 
 #: archive-jetpack-testimonial.php:50 image.php:38 index.php:37 search.php:30
-#: template-parts/content-audio.php:52 template-parts/content-page.php:32
-#: template-parts/content-video.php:50 template-parts/content.php:48
+#: template-parts/content-audio.php:54 template-parts/content-page.php:34
+#: template-parts/content-video.php:52 template-parts/content.php:50
 msgid "Page"
 msgstr ""
 
-#: area-featured.php:44 area-featured.php:47 area-featured.php:48
+#: area-featured.php:45 area-featured.php:48 area-featured.php:49
 #: inc/customizer/front-page.php:132
 msgid "Articles"
 msgstr ""
@@ -440,8 +440,8 @@ msgstr ""
 msgid "Previous post:"
 msgstr ""
 
-#: template-parts/content-audio.php:59 template-parts/content-video.php:57
-#: template-parts/content.php:55
+#: template-parts/content-audio.php:61 template-parts/content-video.php:59
+#: template-parts/content.php:57
 msgid "<span class=\"screen-reader-text\">Tagged</span> %s"
 msgstr ""
 
@@ -502,7 +502,7 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: area-featured.php:53
+#: area-featured.php:54
 msgctxt "Dash between featured title and link"
 msgid "&ndash;"
 msgstr ""
