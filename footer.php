@@ -36,8 +36,8 @@
 				?>
 				
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'chuchadon' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'chuchadon' ), 'WordPress' ); ?></a>
-				<span class="sep"><?php echo _x( '&middot;', 'Separator in site info.', 'chuchadon' ); ?></span>
-				<?php printf( __( 'Theme %1$s by %2$s', 'chuchadon' ), 'Toivo', '<a href="https://foxland.fi" rel="designer">Foxland</a>' ); ?>
+				<span class="sep"><?php echo esc_html_x( '&middot;', 'Separator in site info.', 'chuchadon' ); ?></span>
+				<?php printf( esc_html__( 'Theme %1$s by %2$s', 'chuchadon' ), 'Chuchadon', '<a href="https://foxland.fi" rel="designer">Foxland</a>' ); ?>
 			
 			<?php endif; // End check for footer text. ?>
 			
