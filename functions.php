@@ -1,6 +1,6 @@
 <?php
 /**
- * Toivo functions, definitions, filters and actions.
+ * Theme functions, definitions, filters and actions.
  *
  * @package Chuchadon
  */
@@ -40,7 +40,7 @@ function chuchadon_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Toivo, use a find and replace
+	 * If you're building a theme based on Chuchadon, use a find and replace
 	 * to change 'chuchadon' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'chuchadon', get_template_directory() . '/languages' );
@@ -116,46 +116,6 @@ endif; // chuchadon_setup
 add_action( 'after_setup_theme', 'chuchadon_setup' );
 
 /**
- * Register theme layouts.
- *
- * @link https://github.com/justintadlock/hybrid-core/issues/103#issuecomment-101084600
- * @since 1.0.0
- */
-function chuchadon_register_layouts() {
-	
-	hybrid_register_layout(
-		'1c',
-		array(
-			'label'            => _x( '1 Column', 'theme layout', 'chuchadon' ),
-			'is_global_layout' => true,
-			'is_post_layout'   => true,
-			'image'            => '',
-		)
-	);
-
-	hybrid_register_layout(
-		'2c-l',
-		array(
-			'label'            => _x( '2 Columns: Content / Sidebar', 'theme layout', 'chuchadon' ),
-			'is_global_layout' => true,
-			'is_post_layout'   => true,
-			'image'            => '',
-		)
-	);
-
-    hybrid_register_layout(
-        '2c-r',
-        array(
-            'label'            => _x( '2 Columns: Sidebar / Content', 'theme layout', 'chuchadon' ),
-            'is_global_layout' => true,
-            'is_post_layout'   => true,
-            'image'            => '',
-        )
-    );
-}
-add_action( 'hybrid_register_layouts', 'chuchadon_register_layouts' );
-
-/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -164,8 +124,8 @@ function chuchadon_widgets_init() {
 
 	$sidebar_primary_args = array(
 		'id'            => 'primary',
-		'name'          => _x( 'Primary', 'sidebar', 'chuchadon' ),
-		'description'   => __( 'The main sidebar. It is displayed on the right or left side of the page.', 'chuchadon' ),
+		'name'          => esc_html_x( 'Primary', 'sidebar', 'chuchadon' ),
+		'description'   => esc_html__( 'The main sidebar. It is displayed on the right or left side of the page.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -174,8 +134,8 @@ function chuchadon_widgets_init() {
 	
 	$sidebar_header_args = array(
 		'id'            => 'header',
-		'name'          => _x( 'Header', 'sidebar', 'chuchadon' ),
-		'description'   => __( 'A sidebar located in the header of the site.', 'chuchadon' ),
+		'name'          => esc_html_x( 'Header', 'sidebar', 'chuchadon' ),
+		'description'   => esc_html__( 'A sidebar located in the header of the site.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -184,8 +144,8 @@ function chuchadon_widgets_init() {
 	
 	$sidebar_subsidiary_args = array(
 		'id'            => 'subsidiary',
-		'name'          => _x( 'Subsidiary', 'sidebar', 'chuchadon' ),
-		'description'   => __( 'A sidebar located in the footer of the site.', 'chuchadon' ),
+		'name'          => esc_html_x( 'Subsidiary', 'sidebar', 'chuchadon' ),
+		'description'   => esc_html__( 'A sidebar located in the footer of the site.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -194,8 +154,8 @@ function chuchadon_widgets_init() {
 	
 	$sidebar_front_page_args = apply_filters( 'chuchadon_sidebar_front_page_args', array(
 		'id'            => 'front-page',
-		'name'          => _x( 'Front Page', 'sidebar', 'chuchadon' ),
-		'description'   => __( 'A sidebar located in the Front Page Template.', 'chuchadon' ),
+		'name'          => esc_html_x( 'Front Page', 'sidebar', 'chuchadon' ),
+		'description'   => esc_html__( 'A sidebar located in the Front Page Template.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
