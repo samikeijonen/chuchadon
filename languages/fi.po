@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Toivo 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2016-01-06 19:26+0200\n"
-"PO-Revision-Date: 2016-01-06 19:41+0200\n"
+"POT-Creation-Date: 2016-01-07 09:32+0200\n"
+"PO-Revision-Date: 2016-01-07 09:35+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -75,52 +75,52 @@ msgstr "Voimanlähteenä %s"
 msgid "Theme %1$s by %2$s"
 msgstr "Teeman %1$s tekijä %2$s"
 
-#: functions.php:168
+#: functions.php:128
 msgid ""
 "The main sidebar. It is displayed on the right or left side of the page."
 msgstr ""
 "Päävimpainalue. Tähän liitetyt vimpaimet näkyvät sisällön oikealla tai "
 "vasemmalla puolella."
 
-#: functions.php:178
+#: functions.php:138
 msgid "A sidebar located in the header of the site."
 msgstr "Sivupalkki sijaitsee sivun yläreunassa."
 
-#: functions.php:188
+#: functions.php:148
 msgid "A sidebar located in the footer of the site."
 msgstr "Sivupalkki sijaitsee alapalkissa."
 
-#: functions.php:198
+#: functions.php:158
 msgid "A sidebar located in the Front Page Template."
 msgstr "Tähän liitetyt vimpaimet näkyvät Etusivu-sivupohjassa."
 
-#: functions.php:279 functions.php:280 menus/menu-buttons.php:23
+#: functions.php:239 functions.php:240 menus/menu-buttons.php:23
 msgid "Menu"
 msgstr "Menu"
 
-#: functions.php:281
+#: functions.php:241
 msgid "Open child menu"
 msgstr "Avaa alavalikko"
 
-#: functions.php:282
+#: functions.php:242
 msgid "Close child menu"
 msgstr "Sulje alavalikko"
 
-#: functions.php:283 functions.php:284 menus/menu-buttons.php:34
+#: functions.php:243 functions.php:244 menus/menu-buttons.php:34
 msgid "Search"
 msgstr "Haku"
 
-#: functions.php:285 functions.php:286 menus/menu-buttons.php:40
+#: functions.php:245 functions.php:246 menus/menu-buttons.php:40
 msgid "Social"
 msgstr "Some"
 
-#: functions.php:287 functions.php:288 menus/menu-buttons.php:47
+#: functions.php:247 functions.php:248 menus/menu-buttons.php:47
 msgid "Info"
 msgstr "Info"
 
 #. Translators: The %s is the post title shown to screen readers.
 #. translators: %s: Name of current post
-#: functions.php:341 template-parts/content-audio.php:45
+#: functions.php:301 template-parts/content-audio.php:45
 #: template-parts/content-link.php:44 template-parts/content-page.php:25
 #: template-parts/content-video.php:43 template-parts/content.php:41
 msgid "Read more %s"
@@ -378,7 +378,7 @@ msgstr "Otsakkeen \"Callout\" teksti"
 
 #: inc/meta-boxes.php:42
 msgid "Add callout link in singular views."
-msgstr ""
+msgstr "Lisää Callout-linkki sivulle."
 
 #: inc/meta-boxes.php:46
 msgid "Callout text (required)"
@@ -499,28 +499,22 @@ msgid "https://foxland.fi/downloads/chuchadon/"
 msgstr "https://foxland.fi/downloads/chuchadon/"
 
 #. Description of the plugin/theme
-#, fuzzy
 msgid ""
-"Chuchadon is perfect fit for business, personal or blog sites. It has "
-"beautiful Front Page template where you can show your important content, "
-"testimonials and Callout links. Toivo is an accessible, translation-ready "
-"theme which supports plenty of features like Right to Left languages and "
-"Schema.org microdata."
+"Chuchadon WordPress theme is made for sport clubs looking to use the "
+"SportsPress plugin. It’s also a perfect home for your fitness, health, or "
+"happiness blog."
 msgstr ""
-"Toivo on täydellinen teema sivuillesi oli se sitten yrityssivu tai "
-"henkilökohtainen blogi. Teemassa on upea Etusivu, jossa voit näyttää "
-"tärkeimmän sisällön, suositukset ja Callout-linkkejä. Teema on saanut "
-"virallisen saavutettavuus (Accessibility Ready) merkinnän ja siinä on paljon "
-"ominaisuuksia kuten tuki oikealta vasemmalle -kielille ja tuki Schema.org "
-"merkkauskielelle."
+"Chuchadon WordPress-teema on tehty urheiluseuroille, jotka käyttävät "
+"SportsPress-lisäosaa. Se on on myös täydellinen valinta fitness, terveys tai "
+"onnellisuus blogille."
 
 #. Author of the plugin/theme
 msgid "Sami Keijonen"
 msgstr "Sami Keijonen"
 
 #. Author URI of the plugin/theme
-msgid "https://foxland.fi"
-msgstr "https://foxland.fi"
+msgid "https://foxland.fi/"
+msgstr "https://foxland.fi/"
 
 #. Template Name of the plugin/theme
 msgid "Front Page"
@@ -568,37 +562,22 @@ msgctxt "nav menu location"
 msgid "Social links in footer"
 msgstr "Somelinkit alapalkissa"
 
-#: functions.php:129
-msgctxt "theme layout"
-msgid "1 Column"
-msgstr "1 sarake"
-
-#: functions.php:139
-msgctxt "theme layout"
-msgid "2 Columns: Content / Sidebar"
-msgstr "Kaksi saraketta: sisältö / sivupalkki"
-
-#: functions.php:149
-msgctxt "theme layout"
-msgid "2 Columns: Sidebar / Content"
-msgstr "Kaksi saraketta: sivupalkki / sisältö"
-
-#: functions.php:167
+#: functions.php:127
 msgctxt "sidebar"
 msgid "Primary"
 msgstr "Sivupalkki"
 
-#: functions.php:177
+#: functions.php:137
 msgctxt "sidebar"
 msgid "Header"
 msgstr "Sivupalkki ylhäällä"
 
-#: functions.php:187
+#: functions.php:147
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr "Sivupalkki alhaalla"
 
-#: functions.php:197
+#: functions.php:157
 msgctxt "sidebar"
 msgid "Front Page"
 msgstr "Etusivu"
@@ -606,7 +585,7 @@ msgstr "Etusivu"
 #. Translators: If there are characters in your language that are not
 #. * supported by Open Sans, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:225
+#: functions.php:185
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
@@ -614,7 +593,7 @@ msgstr "on"
 #. Translators: If there are characters in your language that are not
 #. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:231
+#: functions.php:191
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "on"
@@ -717,6 +696,33 @@ msgstr "&larr;"
 msgctxt "Arrow for link post format in left to right languages"
 msgid "&rarr;"
 msgstr "&rarr;"
+
+#, fuzzy
+#~ msgid ""
+#~ "Chuchadon is perfect fit for business, personal or blog sites. It has "
+#~ "beautiful Front Page template where you can show your important content, "
+#~ "testimonials and Callout links. Toivo is an accessible, translation-ready "
+#~ "theme which supports plenty of features like Right to Left languages and "
+#~ "Schema.org microdata."
+#~ msgstr ""
+#~ "Toivo on täydellinen teema sivuillesi oli se sitten yrityssivu tai "
+#~ "henkilökohtainen blogi. Teemassa on upea Etusivu, jossa voit näyttää "
+#~ "tärkeimmän sisällön, suositukset ja Callout-linkkejä. Teema on saanut "
+#~ "virallisen saavutettavuus (Accessibility Ready) merkinnän ja siinä on "
+#~ "paljon ominaisuuksia kuten tuki oikealta vasemmalle -kielille ja tuki "
+#~ "Schema.org merkkauskielelle."
+
+#~ msgctxt "theme layout"
+#~ msgid "1 Column"
+#~ msgstr "1 sarake"
+
+#~ msgctxt "theme layout"
+#~ msgid "2 Columns: Content / Sidebar"
+#~ msgstr "Kaksi saraketta: sisältö / sivupalkki"
+
+#~ msgctxt "theme layout"
+#~ msgid "2 Columns: Sidebar / Content"
+#~ msgstr "Kaksi saraketta: sivupalkki / sisältö"
 
 #~ msgctxt "nav menu location"
 #~ msgid "Social"
