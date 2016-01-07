@@ -7,7 +7,7 @@
  * microdata while being forward compatible with the ever-changing Web. Currently, the default microdata 
  * vocabulary supported is Schema.org.
  *
- * @package    Toivo
+ * @package    Chuchadon
  * @author     Justin Tadlock <justin@justintadlock.com>
  * @copyright  Copyright (c) 2008 - 2014, Justin Tadlock
  * @link       http://themehybrid.com/hybrid-core
