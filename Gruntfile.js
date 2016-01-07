@@ -14,7 +14,7 @@ grunt.initConfig({
           exclude: ['build/.*'],        // Exlude build folder.
           potFilename: 'chuchadon.pot', // Name of the POT file.
           type: 'wp-theme',             // Type of project (wp-plugin or wp-theme).
-          updateTimestamp: true,        // Whether the POT-Creation-Date should be updated without other changes.
+          updateTimestamp: false,       // Whether the POT-Creation-Date should be updated without other changes.
           processPot: function( pot, options ) {
             pot.headers['report-msgid-bugs-to'] = 'https://foxland.fi/contact/';
 			pot.headers['language'] = 'en_US';
@@ -139,8 +139,8 @@ grunt.initConfig({
 			],
 			overwrite: true,
 			replacements: [ {
-				from: /^define\( 'TOIVO_VERSION'.*$/m,
-				to: 'define( \'TOIVO_VERSION\', \'<%= pkg.version %>\' );'
+				from: /^define\( 'CHUCHADON_VERSION'.*$/m,
+				to: 'define( \'CHUCHADON_VERSION\', \'<%= pkg.version %>\' );'
 			} ]
 		}
 	},
