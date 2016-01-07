@@ -2502,6 +2502,10 @@ ol.comment-list ol.children {
 
 /* === Individual comments */
 
+.bypostauthor {
+	
+}
+
 li.comment .comment-wrap,
 li.ping .comment-wrap {
 	padding-bottom: 1em;
