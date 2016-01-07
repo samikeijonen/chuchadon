@@ -1,6 +1,6 @@
 # Chuchadon
 
-Chuchadon is a theme for church, charity and donation sites.
+Chuchadon WordPress theme is made for sport clubs looking to use the [SportsPress](https://wordpress.org/support/plugin/sportspress) plugin. It’s also a perfect home for your fitness, health, or happiness blog.
 
 ## Documentation
 
@@ -13,7 +13,7 @@ Theme has couple of features you should be aware of. You can read documentation 
 
 The following resources are not included with the theme but are external resources linked to within the theme.
 
-* [Nunito](https://www.google.com/fonts/specimen/Nunito) by Vernon Adams - Licensed under the [SIL Open Font License, version 1.1](http://scripts.sil.org/OFL).
+* [Dosis](https://www.google.com/fonts/specimen/Dosis) by Pablo Impallari - Licensed under the [SIL Open Font License, version 1.1](http://scripts.sil.org/OFL).
 * [Open Sans](https://www.google.com/fonts/specimen/Open%20Sans) by Steve Matteson - Licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
 The following resources are included within the theme package.
@@ -23,10 +23,10 @@ The following resources are included within the theme package.
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2015 &copy; [Sami Keijonen](https://foxland.fi).
+2016 &copy; [Sami Keijonen](https://foxland.fi/).
 
 ## Changelog
 
-### Version 1.0.0 - April 17, 2015
+### Version 1.0.0 - January 15, 2016
 
 * Everything's new!
