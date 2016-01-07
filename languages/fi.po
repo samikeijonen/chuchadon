@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Toivo 1.0.0\n"
+"Project-Id-Version: Chuchadon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2016-01-07 09:32+0200\n"
-"PO-Revision-Date: 2016-01-07 09:35+0200\n"
+"POT-Creation-Date: 2016-01-07 09:44+0200\n"
+"PO-Revision-Date: 2016-01-07 09:46+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -696,88 +696,3 @@ msgstr "&larr;"
 msgctxt "Arrow for link post format in left to right languages"
 msgid "&rarr;"
 msgstr "&rarr;"
-
-#, fuzzy
-#~ msgid ""
-#~ "Chuchadon is perfect fit for business, personal or blog sites. It has "
-#~ "beautiful Front Page template where you can show your important content, "
-#~ "testimonials and Callout links. Toivo is an accessible, translation-ready "
-#~ "theme which supports plenty of features like Right to Left languages and "
-#~ "Schema.org microdata."
-#~ msgstr ""
-#~ "Toivo on täydellinen teema sivuillesi oli se sitten yrityssivu tai "
-#~ "henkilökohtainen blogi. Teemassa on upea Etusivu, jossa voit näyttää "
-#~ "tärkeimmän sisällön, suositukset ja Callout-linkkejä. Teema on saanut "
-#~ "virallisen saavutettavuus (Accessibility Ready) merkinnän ja siinä on "
-#~ "paljon ominaisuuksia kuten tuki oikealta vasemmalle -kielille ja tuki "
-#~ "Schema.org merkkauskielelle."
-
-#~ msgctxt "theme layout"
-#~ msgid "1 Column"
-#~ msgstr "1 sarake"
-
-#~ msgctxt "theme layout"
-#~ msgid "2 Columns: Content / Sidebar"
-#~ msgstr "Kaksi saraketta: sisältö / sivupalkki"
-
-#~ msgctxt "theme layout"
-#~ msgid "2 Columns: Sidebar / Content"
-#~ msgstr "Kaksi saraketta: sivupalkki / sisältö"
-
-#~ msgctxt "nav menu location"
-#~ msgid "Social"
-#~ msgstr "Some"
-
-#~ msgid "Portfolio in %s"
-#~ msgstr "Portfolio kategoriassa %s"
-
-#~ msgid "Collapse Search"
-#~ msgstr "Piilota haku"
-
-#~ msgid "Expand Header Sidebar"
-#~ msgstr "Näytä otsakkeen sivupalkki"
-
-#~ msgid "Expand Social Menu"
-#~ msgstr "Näytä some-valikko"
-
-#~ msgid "Collapse Social Menu"
-#~ msgstr "Piilota some-valikko"
-
-#~ msgid "%s Callout title"
-#~ msgstr "Callout-otsikko %s"
-
-#~ msgid "Hide testimonials"
-#~ msgstr "Piilota suositukset"
-
-#~ msgid ""
-#~ "Check this if you want to hide testimonials from the Front Page Template."
-#~ msgstr ""
-#~ "Valitse tämä, jos haluta piilottaa suositukset Etusivu-sivupohjassa."
-
-#~ msgid "Testimonials after featured area"
-#~ msgstr "Suositukset \"Featured\"-alueen jälkeen"
-
-#~ msgid "Portfolios"
-#~ msgstr "Portfoliot"
-
-#~ msgid "Portfolio Settings"
-#~ msgstr "Portfolio asetukset"
-
-#~ msgid "Portfolio Page Title"
-#~ msgstr "Portfolio-sivun otsikko"
-
-#~ msgid "Portfolio Page Description"
-#~ msgstr "Portfolio-sivun kuvaus"
-
-#, fuzzy
-#~ msgid "Expand Menu"
-#~ msgstr "Avaa alavalikko"
-
-#~ msgctxt "dash before menu item description"
-#~ msgid "&ndash;"
-#~ msgstr "&ndash;"
-
-#, fuzzy
-#~ msgctxt "theme layout"
-#~ msgid "Default"
-#~ msgstr "Oletus"
