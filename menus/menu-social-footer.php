@@ -14,6 +14,8 @@
 		<?php wp_nav_menu(
 			array(
 				'theme_location' => 'social-footer',
+				'menu_id'        => 'social-menu-footer-items',
+				'menu_class'     => 'social-menu-footer-items',
 				'depth'          => 1,
 				'link_before'    => '<span class="screen-reader-text">',
 				'link_after'     => '</span>',
