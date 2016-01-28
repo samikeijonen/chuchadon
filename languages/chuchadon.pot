@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Chuchadon 1.0.0\n"
+"Project-Id-Version: Chuchadon 1.0.1\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
 "POT-Creation-Date: 2016-01-06 17:49:18+00:00\n"
 "MIME-Version: 1.0\n"
@@ -90,31 +90,31 @@ msgstr ""
 msgid "A sidebar located in the Front Page Template."
 msgstr ""
 
-#: functions.php:239 functions.php:240 menus/menu-buttons.php:23
+#: functions.php:251 functions.php:252 menus/menu-buttons.php:23
 msgid "Menu"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:253
 msgid "Open child menu"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:254
 msgid "Close child menu"
 msgstr ""
 
-#: functions.php:243 functions.php:244 menus/menu-buttons.php:34
+#: functions.php:255 functions.php:256 menus/menu-buttons.php:34
 msgid "Search"
 msgstr ""
 
-#: functions.php:245 functions.php:246 menus/menu-buttons.php:40
+#: functions.php:257 functions.php:258 menus/menu-buttons.php:40
 msgid "Social"
 msgstr ""
 
-#: functions.php:247 functions.php:248 menus/menu-buttons.php:47
+#: functions.php:259 functions.php:260 menus/menu-buttons.php:47
 msgid "Info"
 msgstr ""
 
-#: functions.php:301 template-parts/content-audio.php:45
+#: functions.php:307 template-parts/content-audio.php:45
 #: template-parts/content-link.php:44 template-parts/content-page.php:25
 #: template-parts/content-video.php:43 template-parts/content.php:41
 #. Translators: The %s is the post title shown to screen readers.
