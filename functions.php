@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CHUCHADON_VERSION', '1.0.0' );
+define( 'CHUCHADON_VERSION', '1.0.1' );
 
 /**
  * The suffix to use for scripts.
@@ -57,10 +57,10 @@ function chuchadon_setup() {
 	set_post_thumbnail_size( 1200, 675, true );
 	
 	/* Add custom image sizes. */
-	add_image_size( 'chuchadon-site-logo', 30, 9999, false );
-	add_image_size( 'chuchadon-testimonial', 140, 140, true );
+	add_image_size( 'chuchadon-single-post', 1200, 9999, false );
+	add_image_size( 'chuchadon-site-logo', 100, 9999, false );
 
-	/* This theme uses wp_nav_menu() in 3 locations. */
+	/* This theme uses wp_nav_menu() in 4 locations. */
 	register_nav_menus( array( 
 		'top-left'      => _x( 'Top Left', 'nav menu location', 'chuchadon' ),
 		'top-right'     => _x( 'Top right', 'nav menu location', 'chuchadon' ),
@@ -212,6 +212,18 @@ function chuchadon_fonts_url() {
 }
 
 /**
+ * Handles JavaScript detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @since 1.0.1
+ */
+function twentysixteen_javascript_detection() {
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action( 'wp_head', 'twentysixteen_javascript_detection', 0 );
+
+/**
  * Enqueue scripts and styles.
  */
 function chuchadon_scripts() {
@@ -234,7 +246,7 @@ function chuchadon_scripts() {
 	wp_enqueue_script( 'chuchadon-navigation', get_template_directory_uri() . '/js/responsive-nav' . CHUCHADON_SUFFIX . '.js', array(), CHUCHADON_VERSION, true );
 	
 	/* Enqueue responsive navigation settings. */
-	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/functions' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation' ), CHUCHADON_VERSION, true );
+	wp_enqueue_script( 'chuchadon-settings', trailingslashit( get_template_directory_uri() ) . 'js/functions' . CHUCHADON_SUFFIX . '.js', array( 'chuchadon-navigation', ), CHUCHADON_VERSION, true );
 	wp_localize_script( 'chuchadon-settings', 'screenReaderTexts', array(
 		'expandMenu'            => esc_html__( 'Menu', 'chuchadon' ),
 		'collapseMenu'          => esc_html__( 'Menu', 'chuchadon' ),
@@ -264,12 +276,6 @@ add_action( 'wp_enqueue_scripts', 'chuchadon_scripts' );
 function chuchadon_one_column() {
 
 	if ( is_page_template( 'pages/front-page.php' ) || is_page_template( 'pages/no-sidebar.php' ) || is_page_template( 'pages/child-pages.php' ) ) {
-		add_filter( 'theme_mod_theme_layout', 'chuchadon_theme_layout_one_column' );
-	}
-	elseif ( is_post_type_archive( 'jetpack-testimonial' ) || is_post_type_archive( 'jetpack-portfolio' ) ) {
-		add_filter( 'theme_mod_theme_layout', 'chuchadon_theme_layout_one_column' );
-	}
-	elseif ( is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
 		add_filter( 'theme_mod_theme_layout', 'chuchadon_theme_layout_one_column' );
 	}
 	elseif ( is_attachment() && wp_attachment_is_image() ) {
