@@ -95,9 +95,6 @@ function chuchadon_setup() {
 	add_theme_support( 'site-logo', array(
 		'size' => 'chuchadon-site-logo',
 	) );
-
-	/* Add theme support for responsive videos. */
-	add_theme_support( 'jetpack-responsive-videos' );
 	
 	/* Add theme support for SportPress Plugin. */
 	add_theme_support( 'sportspress' );
@@ -135,7 +132,7 @@ function chuchadon_widgets_init() {
 	$sidebar_header_args = array(
 		'id'            => 'header',
 		'name'          => esc_html_x( 'Header', 'sidebar', 'chuchadon' ),
-		'description'   => esc_html__( 'A sidebar located in the header of the site.', 'chuchadon' ),
+		'description'   => esc_html__( 'A widget area located in the header of the site.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -145,7 +142,7 @@ function chuchadon_widgets_init() {
 	$sidebar_subsidiary_args = array(
 		'id'            => 'subsidiary',
 		'name'          => esc_html_x( 'Subsidiary', 'sidebar', 'chuchadon' ),
-		'description'   => esc_html__( 'A sidebar located in the footer of the site.', 'chuchadon' ),
+		'description'   => esc_html__( 'A widget area located in the footer of the site.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -155,7 +152,7 @@ function chuchadon_widgets_init() {
 	$sidebar_front_page_args = apply_filters( 'chuchadon_sidebar_front_page_args', array(
 		'id'            => 'front-page',
 		'name'          => esc_html_x( 'Front Page', 'sidebar', 'chuchadon' ),
-		'description'   => esc_html__( 'A sidebar located in the Front Page Template.', 'chuchadon' ),
+		'description'   => esc_html__( 'A widget area located in the Front Page Template.', 'chuchadon' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',

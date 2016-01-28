@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chuchadon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://foxland.fi/contact/\n"
-"POT-Creation-Date: 2016-01-07 10:48+0200\n"
-"PO-Revision-Date: 2016-01-07 10:48+0200\n"
+"POT-Creation-Date: 2016-01-28 10:56+0200\n"
+"PO-Revision-Date: 2016-01-28 10:58+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -75,52 +75,52 @@ msgstr "Voimanlähteenä %s"
 msgid "Theme %1$s by %2$s"
 msgstr "Teeman %1$s tekijä %2$s"
 
-#: functions.php:128
+#: functions.php:125
 msgid ""
 "The main sidebar. It is displayed on the right or left side of the page."
 msgstr ""
 "Päävimpainalue. Tähän liitetyt vimpaimet näkyvät sisällön oikealla tai "
 "vasemmalla puolella."
 
-#: functions.php:138
-msgid "A sidebar located in the header of the site."
-msgstr "Sivupalkki sijaitsee sivun yläreunassa."
+#: functions.php:135
+msgid "A widget area located in the header of the site."
+msgstr "Vimpainalue sijaitsee sivun yläreunassa."
 
-#: functions.php:148
-msgid "A sidebar located in the footer of the site."
-msgstr "Sivupalkki sijaitsee alapalkissa."
+#: functions.php:145
+msgid "A widget area located in the footer of the site."
+msgstr "Vimpainalue sijaitsee alapalkissa."
 
-#: functions.php:158
-msgid "A sidebar located in the Front Page Template."
+#: functions.php:155
+msgid "A widget area located in the Front Page Template."
 msgstr "Tähän liitetyt vimpaimet näkyvät Etusivu-sivupohjassa."
 
-#: functions.php:239 functions.php:240 menus/menu-buttons.php:23
+#: functions.php:248 functions.php:249 menus/menu-buttons.php:23
 msgid "Menu"
 msgstr "Menu"
 
-#: functions.php:241
+#: functions.php:250
 msgid "Open child menu"
 msgstr "Avaa alavalikko"
 
-#: functions.php:242
+#: functions.php:251
 msgid "Close child menu"
 msgstr "Sulje alavalikko"
 
-#: functions.php:243 functions.php:244 menus/menu-buttons.php:34
+#: functions.php:252 functions.php:253 menus/menu-buttons.php:34
 msgid "Search"
 msgstr "Haku"
 
-#: functions.php:245 functions.php:246 menus/menu-buttons.php:40
+#: functions.php:254 functions.php:255 menus/menu-buttons.php:40
 msgid "Social"
 msgstr "Some"
 
-#: functions.php:247 functions.php:248 menus/menu-buttons.php:47
+#: functions.php:256 functions.php:257 menus/menu-buttons.php:47
 msgid "Info"
 msgstr "Info"
 
 #. Translators: The %s is the post title shown to screen readers.
 #. translators: %s: Name of current post
-#: functions.php:301 template-parts/content-audio.php:45
+#: functions.php:304 template-parts/content-audio.php:45
 #: template-parts/content-link.php:44 template-parts/content-page.php:25
 #: template-parts/content-video.php:43 template-parts/content.php:41
 msgid "Read more %s"
@@ -562,22 +562,22 @@ msgctxt "nav menu location"
 msgid "Social links in footer"
 msgstr "Somelinkit alapalkissa"
 
-#: functions.php:127
+#: functions.php:124
 msgctxt "sidebar"
 msgid "Primary"
 msgstr "Sivupalkki"
 
-#: functions.php:137
+#: functions.php:134
 msgctxt "sidebar"
 msgid "Header"
 msgstr "Sivupalkki ylhäällä"
 
-#: functions.php:147
+#: functions.php:144
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr "Sivupalkki alhaalla"
 
-#: functions.php:157
+#: functions.php:154
 msgctxt "sidebar"
 msgid "Front Page"
 msgstr "Etusivu"
@@ -585,7 +585,7 @@ msgstr "Etusivu"
 #. Translators: If there are characters in your language that are not
 #. * supported by Open Sans, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:185
+#: functions.php:182
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
@@ -593,7 +593,7 @@ msgstr "on"
 #. Translators: If there are characters in your language that are not
 #. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:191
+#: functions.php:188
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "on"
@@ -696,7 +696,3 @@ msgstr "&larr;"
 msgctxt "Arrow for link post format in left to right languages"
 msgid "&rarr;"
 msgstr "&rarr;"
-
-#~ msgctxt "Breadcrumbs aria label"
-#~ msgid "Breadcrumbs"
-#~ msgstr "Murupolku"
