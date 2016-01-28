@@ -4,7 +4,7 @@ Theme URI: https://foxland.fi/downloads/chuchadon/
 Author: Sami Keijonen
 Author URI: https://foxland.fi/
 Description: Chuchadon WordPress theme is made for sport clubs looking to use the SportsPress plugin. It’s also a perfect home for your fitness, health, or happiness blog.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: chuchadon
@@ -757,7 +757,7 @@ a[href^="tel:"]::before,
 	content: '\f307';
 	padding-right: 4px;
 	position: relative;
-	bottom: 0;
+	bottom: 1px;
 }
 .entry-terms::before {	
 	padding-right: 0;
@@ -1080,6 +1080,7 @@ a.chuchadon-button {
 		position: absolute;
 		display: block;
 		overflow: hidden;
+		visibility: hidden;
 		zoom: 1;
 	}
 
@@ -1087,6 +1088,7 @@ a.chuchadon-button {
 	.main-navigation .sub-menu.toggled {
 		max-height: 9999px;
 		position: relative;
+		visibility: visible;
 	}
 	
 	/* Enable active class to let the navigation expand over the calculated max height. */
@@ -1307,7 +1309,11 @@ a.chuchadon-button {
 	zoom: 1;
 }
 
-	
+.js .top-search-form,
+.js .social-navigation,
+.js .sidebar-header-wrapper {
+	visibility: hidden;
+}
 .top-search-form.opened,
 .js .social-navigation.opened,
 .sidebar-header-wrapper.opened {
@@ -2477,6 +2483,15 @@ body #infinite-handle,
 	padding-top: 1.5em;
 	margin-top: 1.5em;
 }
+.comment-reply-title,
+.comment-notes,
+.logged-in-as {
+	text-align: center;
+}
+.comment-notes,
+.logged-in-as {
+	font-style: italic;
+}
 
 ol.comment-list,
 ol.comment-list ol.children {
@@ -2526,9 +2541,9 @@ ol.comment-list dl dl {
 /* Avatars and images. */
 
 .site-logo {
-	max-width: 150px;
-	max-height: 150px;
-	position: relative;
+	display: block;
+	margin: 0 auto 0.5em;
+	max-height: 100px;
 }
 
 .comment-list .avatar {
