@@ -8,9 +8,9 @@
  */
 ?><!DOCTYPE html>
 <!--[if IE 9]>
-<html class="ie ie9" <?php language_attributes(); ?>>
+<html class="ie ie9" <?php language_attributes(); ?> class="no-js">
 <![endif]-->
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
