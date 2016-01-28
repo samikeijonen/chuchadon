@@ -20,6 +20,10 @@ function chuchadon_jetpack_setup() {
 		'footer_widgets' => 'subsidiary'
 	) );
 	
+
+	/* Add theme support for responsive videos. */
+	add_theme_support( 'jetpack-responsive-videos' );
+	
 }
 add_action( 'after_setup_theme', 'chuchadon_jetpack_setup' );
 
