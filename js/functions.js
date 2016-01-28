@@ -37,7 +37,7 @@
 			},
 		});
 		
-		// Top Right menu. We need to add .focus to this separately.
+		// Top Right menu. We need to add dropdown buttons and .focus to this separately.
 		menuRight = document.getElementById( 'top-right-items' );
 		
 		if ( menuRight ) {
@@ -62,10 +62,12 @@
 	}
 	
 	// Top search form
-	if ( document.getElementById( 'top-search-form' ) ) {
+	var topSearchForm = document.getElementById( 'top-search-form' )
+	if ( topSearchForm ) {
 		var buttonSearch     = document.getElementById( 'top-search-form-toggle' );
 		var buttonSearchSpan = document.getElementById( 'top-search-form-toggle-span' );
 		var buttonSearchMenu = document.getElementById( 'top-search-form-toggle-menu' );
+		var searchField      = topSearchForm.getElementsByTagName( 'input' )[0];
 		var navSearch        = responsiveNav( ".top-search-form", { // Selector
 			transition: 350,                         // Integer: Speed of the transition, in milliseconds
 			customToggle: "#top-search-form-toggle", // Selector: Specify the ID of a custom toggle
@@ -74,19 +76,33 @@
 				buttonSearchMenu.innerHTML = screenReaderTexts.collapseSearch;
 				navSocial.close();
 				navHeader.close();
+				
+				topSearchForm.style.visibility = "visible";
+				
+				setTimeout( function () {
+					searchField.focus();
+				}, 350 );
 			},
 			close: function () {
 				buttonSearchSpan.setAttribute( 'class', 'genericon genericon-search' );
 				buttonSearchMenu.innerHTML = screenReaderTexts.expandSearch;
+				topSearchForm.style.visibility = "hidden";
 			},
 		});
 	}
 	
 	// Social menu
-	if ( document.getElementById( 'menu-social' ) ) {
+	var menuSocial = document.getElementById( 'menu-social' );
+	if ( menuSocial ) {
 		var buttonSocial     = document.getElementById( 'social-nav-toggle' );
 		var buttonSocialSpan = document.getElementById( 'social-nav-toggle-span' );
 		var buttonSocialMenu = document.getElementById( 'social-nav-toggle-menu' );
+		
+		// Focusable vars.
+		var focusMenuSocial = menuSocial.querySelectorAll( 'input, select, a, textarea, button, [tabindex]' );
+		var focusFirst      = focusMenuSocial[0];
+		var focusLast       = focusMenuSocial[focusMenuSocial.length - 1];
+
 		var navSocial        = responsiveNav( ".social-navigation", { // Selector
 			transition: 350,                    // Integer: Speed of the transition, in milliseconds
 			customToggle: "#social-nav-toggle", // Selector: Specify the ID of a custom toggle
@@ -99,21 +115,38 @@
 			open: function () {
 				buttonSocialSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonSocialMenu.innerHTML = screenReaderTexts.collapseSocialMenu;
-				navSearch.close();
-				navHeader.close();
+				navSearch.close();  // Close search.
+				navHeader.close();  // Close Nav.
+				
+				menuSocial.style.visibility = "visible";
+				
+				setTimeout( function () {
+					focusFirst.focus();
+					document.addEventListener( 'keydown', checkKey, true ); // Check Tab and Shift+Tab clicks.
+				}, 350 );
+		
 			},
 			close: function () {
 				buttonSocialSpan.setAttribute( 'class', 'genericon genericon-hierarchy' );
 				buttonSocialMenu.innerHTML = screenReaderTexts.expandSocialMenu;
+				menuSocial.style.visibility = "hidden";
+				document.removeEventListener( 'keydown', checkKey, true );
 			},
 		});
 	}
 	
 	// Header sidebar
-	if ( document.getElementById( 'sidebar-header-wrapper' ) ) {
+	var sidebarHeaderWrapper = document.getElementById( 'sidebar-header-wrapper' );
+	if ( sidebarHeaderWrapper ) {
 		var buttonHeader     = document.getElementById( 'header-sidebar-toggle' );
 		var buttonHeaderSpan = document.getElementById( 'header-sidebar-toggle-span' );
 		var buttonHeaderMenu = document.getElementById( 'header-sidebar-toggle-menu' );
+		
+		// Focusable vars.
+		var focusHeader      = sidebarHeaderWrapper.querySelectorAll( 'input, select, a, textarea, button, [tabindex]' );
+		var focusHeaderFirst = focusHeader[0];
+		var focusHeaderLast  = focusHeader[focusHeader.length - 1];
+		
 		var navHeader        = responsiveNav( ".sidebar-header-wrapper", { // Selector
 			transition: 350,                        // Integer: Speed of the transition, in milliseconds
 			customToggle: "#header-sidebar-toggle", // Selector: Specify the ID of a custom toggle
@@ -128,11 +161,20 @@
 				buttonHeaderMenu.innerHTML = screenReaderTexts.collapseHeaderSidebar;
 				navSearch.close();
 				navSocial.close();
+				
+				sidebarHeaderWrapper.style.visibility = "visible";
+				
+				setTimeout( function () {
+					focusHeaderFirst.focus();
+					document.addEventListener( 'keydown', checkKeyHeader, true ); // Check Tab and Shift+Tab clicks.
+				}, 350 );
 			},
 			close: function () {
 				buttonHeaderSpan.setAttribute( 'class', 'genericon genericon-ellipsis' );
 				buttonHeaderMenu.innerHTML = screenReaderTexts.expandHeaderSidebar;
 				window.scrollTo( 0, 0 );
+				sidebarHeaderWrapper.style.visibility = "hidden";
+				document.removeEventListener( 'keydown', checkKeyHeader, true );
 			},
 		});
 	}
@@ -157,6 +199,40 @@
 
 			self = self.parentElement;
 		}
+	}
+	
+	// Check Tabbing in Social menu.
+	function checkKey( e ) {
+		
+		// Set focus back to social toggle button when tabbing the last focusable element.
+		if ( ( e.key === 'Tab' || e.keyCode === 9 ) && e.target === focusLast ) {
+			e.preventDefault();
+			buttonSocial.focus();
+		}
+		
+		// Set focus back to social toggle button when Shift+Tab the first focusable element.
+		if ( ( e.key === 'Tab' || e.keyCode === 9 ) && e.shiftKey && e.target === focusFirst ) {
+			e.preventDefault();
+			buttonSocial.focus();
+		}
+		
+	}
+	
+	// Check Tabbing in Header.
+	function checkKeyHeader( e ) {
+	
+		// Set focus back to header toggle button when tabbing the last focusable element.
+		if ( ( e.key === 'Tab' || e.keyCode === 9 ) && e.target === focusHeaderLast ) {
+			e.preventDefault();
+			buttonHeader.focus();
+		}
+		
+		// Set focus back to header toggle button when Shift+Tab the first focusable element.
+		if ( ( e.key === 'Tab' || e.keyCode === 9 ) && e.shiftKey && e.target === focusHeaderFirst ) {
+			e.preventDefault();
+			buttonHeader.focus();
+		}
+		
 	}
 	
 	// Fix child menus for touch devices.
