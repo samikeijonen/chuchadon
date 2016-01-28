@@ -4,7 +4,15 @@
  */
 ( function() {
 	var container,
-	menuRight;
+	menuRight,
+	searchFields;
+	
+	// Add icon in all search fields.
+	searchFields = document.getElementsByClassName( 'search-submit' );
+	
+	for ( var i = 0, len = searchFields.length; i < len; i++ ) {
+		searchFields[i].insertAdjacentHTML( 'beforebegin', '<span class="search-icon genericon genericon-search" aria-hidden="true"></span>' );
+	}
 	
 	// Main nagivation
 	container = document.getElementById( 'menu-primary' );
