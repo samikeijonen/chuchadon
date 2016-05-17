@@ -69,8 +69,12 @@
 		
 	}
 	
+	// Set variables.
+	var topSearchForm        = document.getElementById( 'top-search-form' )
+	var menuSocial           = document.getElementById( 'menu-social' );
+	var sidebarHeaderWrapper = document.getElementById( 'sidebar-header-wrapper' );
+	
 	// Top search form
-	var topSearchForm = document.getElementById( 'top-search-form' )
 	if ( topSearchForm ) {
 		var buttonSearch     = document.getElementById( 'top-search-form-toggle' );
 		var buttonSearchSpan = document.getElementById( 'top-search-form-toggle-span' );
@@ -82,8 +86,12 @@
 			open: function () {
 				buttonSearchSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonSearchMenu.innerHTML = screenReaderTexts.collapseSearch;
-				navSocial.close();
-				navHeader.close();
+				if ( menuSocial ) {
+					navSocial.close();
+				}
+				if ( sidebarHeaderWrapper ) {
+					navHeader.close();
+				}
 				
 				topSearchForm.style.visibility = "visible";
 				
@@ -100,7 +108,6 @@
 	}
 	
 	// Social menu
-	var menuSocial = document.getElementById( 'menu-social' );
 	if ( menuSocial ) {
 		var buttonSocial     = document.getElementById( 'social-nav-toggle' );
 		var buttonSocialSpan = document.getElementById( 'social-nav-toggle-span' );
@@ -111,7 +118,7 @@
 		var focusFirst      = focusMenuSocial[0];
 		var focusLast       = focusMenuSocial[focusMenuSocial.length - 1];
 
-		var navSocial        = responsiveNav( ".social-navigation", { // Selector
+		var navSocial       = responsiveNav( ".social-navigation", { // Selector
 			transition: 350,                    // Integer: Speed of the transition, in milliseconds
 			customToggle: "#social-nav-toggle", // Selector: Specify the ID of a custom toggle
 			resizeMobile: function () {         // Set ARIA for menu toggle button
@@ -123,8 +130,12 @@
 			open: function () {
 				buttonSocialSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonSocialMenu.innerHTML = screenReaderTexts.collapseSocialMenu;
-				navSearch.close();  // Close search.
-				navHeader.close();  // Close Nav.
+				if ( topSearchForm ) {
+					navSearch.close();  // Close search.
+				}
+				if ( sidebarHeaderWrapper ) {
+					navHeader.close();  // Close Nav.
+				}
 				
 				menuSocial.style.visibility = "visible";
 				
@@ -144,7 +155,6 @@
 	}
 	
 	// Header sidebar
-	var sidebarHeaderWrapper = document.getElementById( 'sidebar-header-wrapper' );
 	if ( sidebarHeaderWrapper ) {
 		var buttonHeader     = document.getElementById( 'header-sidebar-toggle' );
 		var buttonHeaderSpan = document.getElementById( 'header-sidebar-toggle-span' );
@@ -167,8 +177,12 @@
 			open: function () {
 				buttonHeaderSpan.setAttribute( 'class', 'genericon genericon-close' );
 				buttonHeaderMenu.innerHTML = screenReaderTexts.collapseHeaderSidebar;
-				navSearch.close();
-				navSocial.close();
+				if ( topSearchForm ) {
+					navSearch.close();  // Close search.
+				}
+				if ( menuSocial ) {
+					navSocial.close();
+				}
 				
 				sidebarHeaderWrapper.style.visibility = "visible";
 				
