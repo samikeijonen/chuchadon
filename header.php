@@ -37,7 +37,7 @@
 	
 	<div class="site-title-desc clear">
 	
-		<?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
+		<?php if ( function_exists( 'the_custom_logo' ) ) the_custom_logo(); ?>
 		
 		<p id="home-title" class="home-title" <?php hybrid_attr( 'site-title' ); ?>>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>

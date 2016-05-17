@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CHUCHADON_VERSION', '1.0.1' );
+define( 'CHUCHADON_VERSION', '1.0.2' );
 
 /**
  * The suffix to use for scripts.
@@ -28,14 +28,6 @@ if ( ! function_exists( 'chuchadon_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function chuchadon_setup() {
-
-	/**
-	* Set the content width based on the theme's design and stylesheet.
-	*/
-	global $content_width;
-	if ( ! isset( $content_width ) ) {
-		$content_width = 1200; /* pixels */
-	}
 
 	/*
 	 * Make theme available for translation.
@@ -58,14 +50,13 @@ function chuchadon_setup() {
 	
 	/* Add custom image sizes. */
 	add_image_size( 'chuchadon-single-post', 1200, 9999, false );
-	add_image_size( 'chuchadon-site-logo', 100, 9999, false );
 
 	/* This theme uses wp_nav_menu() in 4 locations. */
 	register_nav_menus( array( 
-		'top-left'      => _x( 'Top Left', 'nav menu location', 'chuchadon' ),
-		'top-right'     => _x( 'Top right', 'nav menu location', 'chuchadon' ),
-		'social'        => _x( 'Social links', 'nav menu location', 'chuchadon' ),
-		'social-footer' => _x( 'Social links in footer', 'nav menu location', 'chuchadon' )
+		'top-left'      => esc_html_x( 'Top Left', 'nav menu location', 'chuchadon' ),
+		'top-right'     => esc_html_x( 'Top right', 'nav menu location', 'chuchadon' ),
+		'social'        => esc_html_x( 'Social links', 'nav menu location', 'chuchadon' ),
+		'social-footer' => esc_html_x( 'Social links in footer', 'nav menu location', 'chuchadon' )
 	) );
 	
 	/*
@@ -92,9 +83,13 @@ function chuchadon_setup() {
 	add_theme_support( 'theme-layouts', array( 'default' => '1c' ) );
 	
 	/* Add theme support for site logo. */
-	add_theme_support( 'site-logo', array(
-		'size' => 'chuchadon-site-logo',
+	add_theme_support( 'custom-logo', array(
+		'height'     => 120,
+		'flex-width' => true
 	) );
+	
+	/* Add theme support for refresh widgets. */
+	add_theme_support( 'customize-selective-refresh-widgets' );
 	
 	/* Add theme support for SportPress Plugin. */
 	add_theme_support( 'sportspress' );
@@ -111,6 +106,18 @@ function chuchadon_setup() {
 }
 endif; // chuchadon_setup
 add_action( 'after_setup_theme', 'chuchadon_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function chuchadon_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'chuchadon_content_width', 1200 );
+}
+add_action( 'after_setup_theme', 'chuchadon_content_width', 0 );
 
 /**
  * Register widget area.
