@@ -27,6 +27,10 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 
 ## Changelog
 
+### Version 1.0.3 - May 17, 2016
+
+* No updates but WordPress.org needed updated version.
+
 ### Version 1.0.2 - May 17, 2016
 
 * Use native WordPress logo system.
