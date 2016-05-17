@@ -27,6 +27,11 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 
 ## Changelog
 
+### Version 1.0.2 - May 17, 2016
+
+* Use native WordPress logo system.
+* Update Media Grabber.
+
 ### Version 1.0.0 - January 15, 2016
 
 * Everything's new!
