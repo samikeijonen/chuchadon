@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.0\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
 "Language: en_US\n"
 
 #: 404.php:22
@@ -74,47 +74,47 @@ msgstr ""
 msgid "Theme %1$s by %2$s"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:132
 msgid "The main sidebar. It is displayed on the right or left side of the page."
 msgstr ""
 
-#: functions.php:135
+#: functions.php:142
 msgid "A widget area located in the header of the site."
 msgstr ""
 
-#: functions.php:145
+#: functions.php:152
 msgid "A widget area located in the footer of the site."
 msgstr ""
 
-#: functions.php:155
+#: functions.php:162
 msgid "A widget area located in the Front Page Template."
 msgstr ""
 
-#: functions.php:248 functions.php:249 menus/menu-buttons.php:23
+#: functions.php:255 functions.php:256 menus/menu-buttons.php:23
 msgid "Menu"
 msgstr ""
 
-#: functions.php:250
+#: functions.php:257
 msgid "Open child menu"
 msgstr ""
 
-#: functions.php:251
+#: functions.php:258
 msgid "Close child menu"
 msgstr ""
 
-#: functions.php:252 functions.php:253 menus/menu-buttons.php:34
+#: functions.php:259 functions.php:260 menus/menu-buttons.php:34
 msgid "Search"
 msgstr ""
 
-#: functions.php:254 functions.php:255 menus/menu-buttons.php:40
+#: functions.php:261 functions.php:262 menus/menu-buttons.php:40
 msgid "Social"
 msgstr ""
 
-#: functions.php:256 functions.php:257 menus/menu-buttons.php:47
+#: functions.php:263 functions.php:264 menus/menu-buttons.php:47
 msgid "Info"
 msgstr ""
 
-#: functions.php:304 template-parts/content-audio.php:45
+#: functions.php:311 template-parts/content-audio.php:45
 #: template-parts/content-link.php:44 template-parts/content-page.php:25
 #: template-parts/content-video.php:43 template-parts/content.php:41
 #. Translators: The %s is the post title shown to screen readers.
@@ -522,58 +522,57 @@ msgctxt "Separator in site info."
 msgid "&middot;"
 msgstr ""
 
-#: functions.php:65
+#: functions.php:56
 msgctxt "nav menu location"
 msgid "Top Left"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:57
 msgctxt "nav menu location"
 msgid "Top right"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:58
 msgctxt "nav menu location"
 msgid "Social links"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:59
 msgctxt "nav menu location"
 msgid "Social links in footer"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:131
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:141
 msgctxt "sidebar"
 msgid "Header"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:151
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:161
 msgctxt "sidebar"
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:182
-#. Translators: If there are characters in your language that are not
-#. * supported by Open Sans, translate this to 'off'. Do not translate
-#. * into your own language.
+#: functions.php:189
+#. Translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:188
-#. Translators: If there are characters in your language that are not
-#. * supported by Lato, translate this to 'off'. Do not translate
-#. * into your own language.
+#: functions.php:195
+#. Translators: If there are characters in your language that are not supported
+#. by Lato, translate this to 'off'. Do not translate into your own language.
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
