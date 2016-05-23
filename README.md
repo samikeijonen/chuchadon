@@ -21,11 +21,29 @@ The following resources are included within the theme package.
 * [Genericons](http://genericons.com/) by Automattic - Licensed under the [GPL, version 2 or later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 * [Responsive Nav](http://responsive-nav.com/) by Viljami Salminen - Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
+The following images are are used in `screenshot.png`. They are all licensed under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
+
+* [Image 1](https://www.pexels.com/photo/red-outside-grass-sport-2182/)
+
+There are some functionality (functions) which are taken from other themes. They are all licended under [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+
+* [Hybrid Core](http://themehybrid.com/hybrid-core)
+* [Twenty Thirteen](https://wordpress.org/themes/twentythirteen/)
+* [Twenty Fifteen](https://wordpress.org/themes/twentyfifteen/)
+* [Twenty Sixteen](https://wordpress.org/themes/twentysixteen/)
+
+More detailed info are found in function comments.
+
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2016 &copy; [Sami Keijonen](https://foxland.fi/).
+&copy; 2016 [Sami Keijonen](https://foxland.fi/).
 
 ## Changelog
+
+### Version 1.0.5 - May 23, 2016
+
+* Update Genericon to version 3.4.1.
+* Update README.md file to have more license info.
 
 ### Version 1.0.4 - May 17, 2016
 
