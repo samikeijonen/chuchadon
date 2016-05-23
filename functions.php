@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CHUCHADON_VERSION', '1.0.4' );
+define( 'CHUCHADON_VERSION', '1.0.5' );
 
 /**
  * The suffix to use for scripts.
@@ -220,12 +220,16 @@ function chuchadon_fonts_url() {
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
+ * @author    Twenty Sixteen
+ * @copyright Automattic
+ * @license  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ *
  * @since 1.0.1
  */
-function twentysixteen_javascript_detection() {
+function chuchadon_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentysixteen_javascript_detection', 0 );
+add_action( 'wp_head', 'chuchadon_javascript_detection', 0 );
 
 /**
  * Enqueue scripts and styles.
