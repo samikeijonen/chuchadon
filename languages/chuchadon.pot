@@ -90,31 +90,31 @@ msgstr ""
 msgid "A widget area located in the Front Page Template."
 msgstr ""
 
-#: functions.php:255 functions.php:256 menus/menu-buttons.php:23
+#: functions.php:259 functions.php:260 menus/menu-buttons.php:23
 msgid "Menu"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:261
 msgid "Open child menu"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:262
 msgid "Close child menu"
 msgstr ""
 
-#: functions.php:259 functions.php:260 menus/menu-buttons.php:34
+#: functions.php:263 functions.php:264 menus/menu-buttons.php:34
 msgid "Search"
 msgstr ""
 
-#: functions.php:261 functions.php:262 menus/menu-buttons.php:40
+#: functions.php:265 functions.php:266 menus/menu-buttons.php:40
 msgid "Social"
 msgstr ""
 
-#: functions.php:263 functions.php:264 menus/menu-buttons.php:47
+#: functions.php:267 functions.php:268 menus/menu-buttons.php:47
 msgid "Info"
 msgstr ""
 
-#: functions.php:311 template-parts/content-audio.php:45
+#: functions.php:315 template-parts/content-audio.php:45
 #: template-parts/content-link.php:44 template-parts/content-page.php:25
 #: template-parts/content-video.php:43 template-parts/content.php:41
 #. Translators: The %s is the post title shown to screen readers.
