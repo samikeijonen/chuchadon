@@ -40,6 +40,13 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 
 ## Changelog
 
+### Version 1.0.6 - Juny 11, 2016
+
+* Remove aria-hidden="true" from focusable elements.
+* Fix accessibility issues on post thumbnails focus styles.
+* Fix entry meta color to pass accessible color contrast.
+* Use new theme tags.
+
 ### Version 1.0.5 - May 23, 2016
 
 * Update Genericon to version 3.4.1.
