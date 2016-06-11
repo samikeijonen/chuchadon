@@ -175,7 +175,7 @@ function chuchadon_post_thumbnail() {
 	<?php else : ?>
 		
 		<div class="entry-image">
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 				<?php
 					the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
 				?>
