@@ -40,6 +40,11 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 
 ## Changelog
 
+### Version 1.1.0 - July 21, 2016
+
+* Fix Site Title and Tagline color in visibility options in the Customizer.
+* Escape Featured Title in Front Page Template.
+
 ### Version 1.0.6 - Juny 11, 2016
 
 * Remove aria-hidden="true" from focusable elements.
