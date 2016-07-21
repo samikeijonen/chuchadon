@@ -25,9 +25,11 @@
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.home-title a, .home-description' ).css( {
+				$( '.home-title, .home-title a, .home-description' ).css( {
 					'clip': 'auto',
-					'position': 'relative'
+					'position': 'relative',
+					'height': 'auto',
+					'width': 'auto',
 				} );
 				$( '.home-title a' ).css( {
 					'color': to

@@ -73,7 +73,7 @@ function chuchadon_header_style() {
 	}
 	
 	if ( ! display_header_text() ) {
-		$style .= ".home-title a, .home-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; }";	
+		$style .= ".home-title, .home-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; height: 1px; width: 1px; overflow: hidden; }";	
 	}
 	
 	/* Echo styles if it's not empty. */

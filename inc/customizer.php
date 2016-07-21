@@ -247,7 +247,7 @@ add_action( 'customize_register', 'chuchadon_customize_register_pm' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function chuchadon_customize_preview_js() {
-	wp_enqueue_script( 'chuchadon-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), CHUCHADON_VERSION, true );
+	wp_enqueue_script( 'chuchadon-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '21072016', true );
 }
 add_action( 'customize_preview_init', 'chuchadon_customize_preview_js' );
 
