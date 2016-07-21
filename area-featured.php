@@ -46,7 +46,7 @@
 								
 							// Featured are title
 							if( get_theme_mod( 'featured_area_title', esc_html__( 'Articles', 'chuchadon' ) ) ) :
-								echo '<h2 class="featured-title">' . get_theme_mod( 'featured_area_title', esc_html__( 'Articles', 'chuchadon' ) );
+								echo '<h2 class="featured-title">' . esc_html( get_theme_mod( 'featured_area_title' ), esc_html__( 'Articles', 'chuchadon' ) );
 							endif;
 							
 							// Featured are link
