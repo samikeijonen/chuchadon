@@ -13,7 +13,7 @@
 function chuchadon_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'chuchadon_custom_header_args', array(
 		'default-image'          => '%s/images/header-image.jpg',
-		'default-text-color'     => 'fff',
+		'default-text-color'     => 'd4000f',
 		'width'                  => 1520,
 		'height'                 => 1520,
 		'flex-height'            => true,
@@ -69,12 +69,11 @@ function chuchadon_header_style() {
 	
 	/* Site title styles. */
 	if ( display_header_text() ) {
-		$style .= ".site-title, .site-title a, .site-description, .site-description a, .top-callout-content, .top-callout-content a, .top-callout-content h2, .top-callout-content h3 { color: #{$header_color} }";
-		$style .= ".site-title a, .top-callout-content a { border-color: #{$header_color} }";
+		$style .= ".home-title a { color: #{$header_color} }";
 	}
 	
 	if ( ! display_header_text() ) {
-		$style .= ".site-title, .site-title a, .site-description, .site-description a { clip: rect(1px, 1px, 1px, 1px); position: absolute; }";	
+		$style .= ".home-title a, .home-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; }";	
 	}
 	
 	/* Echo styles if it's not empty. */

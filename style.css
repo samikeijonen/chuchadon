@@ -4,7 +4,7 @@ Theme URI: https://foxland.fi/downloads/chuchadon/
 Author: Sami Keijonen
 Author URI: https://foxland.fi/
 Description: Chuchadon WordPress theme is made for sport clubs looking to use the SportsPress plugin. It’s also a perfect home for your fitness, health, or happiness blog.
-Version: 1.0.6
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: chuchadon
@@ -3244,6 +3244,14 @@ body #infinite-handle span,
 	color: #fff;
 }
 
+.site-title,
+.site-title a,
+.site-description,
+.site-description a,
+.top-callout-content,
+.top-callout-content a,
+.top-callout-content h2,
+.top-callout-content h3,
 .chuchadon-callout,
 .chuchadon-callout .entry-title,
 a.chuchadon-button,
