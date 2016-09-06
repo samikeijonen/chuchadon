@@ -162,7 +162,7 @@ if ( ! function_exists( 'chuchadon_post_thumbnail' ) ) :
  */
 function chuchadon_post_thumbnail() {
 	
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() || is_singular( array( 'sp_player', 'sp_staff', 'sp_team' ) ) ) {
 		return;
 	}
 	if ( is_singular() && !is_page_template( 'pages/front-page.php' ) && !is_page_template( 'pages/child-pages.php' ) ) :
