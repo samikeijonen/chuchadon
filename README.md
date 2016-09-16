@@ -40,6 +40,10 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 
 ## Changelog
 
+### Version 1.1.1 - September 16, 2016
+
+* Prevent output of featured image in player, staff, and team profiles.
+
 ### Version 1.1.0 - July 21, 2016
 
 * Fix Site Title and Tagline color in visibility options in the Customizer.
