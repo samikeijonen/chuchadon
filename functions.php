@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CHUCHADON_VERSION', '1.1.0' );
+define( 'CHUCHADON_VERSION', '1.1.1' );
 
 /**
  * The suffix to use for scripts.
